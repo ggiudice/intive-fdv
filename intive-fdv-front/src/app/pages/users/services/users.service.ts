@@ -25,10 +25,10 @@ export class UsersService {
   }
 
   // TODO: ver siu hace falta ya que es lo que ya esta en la vista.., pero lo haria igua
-  public getUser(id: string): Observable<User> {
+  public getUser(id: number): Observable<User> {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const users: User[] = usersStorage ? JSON.parse(usersStorage) : [];
-    const user = users.find(userSearch => user.id === id);
+    const user = users.find(userSearch => userSearch.id === id);
     return of(user);
   }
 
@@ -37,8 +37,17 @@ export class UsersService {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const usersList: User[] = usersStorage ? JSON.parse(usersStorage) : [];
 
-    user.id = this.getId();
-    usersList.push(user);
+    if (user.id === undefined) {
+      user.id = this.getId();
+      usersList.push(user);
+    } else {
+      // TODO: Esto arreglar todo mal, no encuentra el que quiere
+      let userUpdate = this.getUser(user.id).subscribe((userSearch: User) => {
+        return userSearch;
+      });
+      debugger
+    }
+
     const usersString = JSON.stringify(usersList);
     this.storageService.setItem(Constants.STORAGE_USERS, usersString);
   }
