@@ -1,23 +1,66 @@
-<form [formGroup]="userForm">
+<form [formGroup]="userForm" (submit)="save()">
     <div class="form-row">
   
       <!-- Name -->
       <div class="form-group col-md-6">
         <label for="mame" class="control-label">Name</label>
-        <input type="text" class="form-control" formControlName="name">
+        <input type="text" class="form-control" formControlName="name" placeholder="Name here">
+      
+        <div class="text-danger" *ngIf="submitted">
+          <span *ngIf="userForm.controls.name.errors?.required">Name required</span>
+          <span *ngIf="userForm.controls.name.errors?.maxlength">Name exceeds 50 characters</span>
+        </div>      
       </div>
   
       <!-- Surname -->
       <div class="form-group col-md-6">
-        <label class="control-label" for="surname">Apellido</label>
-        <input type="text" class="form-control" formControlName="surname">
+        <label class="control-label" for="surname">Surname</label>
+        <input type="text" class="form-control" formControlName="surname" placeholder="Surname here">
+      
+        <div class="text-danger" *ngIf="submitted">
+          <span *ngIf="userForm.controls.surname.errors?.required">Surname required</span>
+          <span *ngIf="userForm.controls.surname.errors?.maxlength">Surname exceeds 50 characters</span>
+        </div>
       </div>
 
       <!-- Country -->
       <div class="form-group col-md-6">
-        <label class="control-label" for="surname">Country</label>
-        <input type="text" class="form-control" formControlName="surname">
+        <label class="control-label" for="country">Country</label>
+
+        <ng-select
+          placeholder="Country here"
+          formControlName="country"
+          [items]="config.countries"
+          bindLabel="name"
+          bindValue="alpha2Code">
+        </ng-select>
+
+        <div class="text-danger" *ngIf="submitted">
+          <span *ngIf="userForm.controls.country.errors?.required">Country required</span>
+        </div>
       </div>
   
+      <!-- BirthDate -->
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <label for="birthdate" class="control-label">Birthdate</label>
+        <input 
+          type="text"
+          placeholder="Birthdate here"
+          class="form-control"
+          [maxDate]="config.maxDate"
+          bsDatepicker
+          formControlName="birthdate">
+        
+        <div class="text-danger" *ngIf="submitted">
+          <span *ngIf="userForm.controls.birthdate.errors?.required">BirthDate required</span>
+          <span *ngIf="userForm.controls.birthdate.errors?.bsDate?.maxDate">BirthDate invalid</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary pull-right">
+        Save
+      </button>
     </div>
   </form>
