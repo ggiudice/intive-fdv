@@ -10,6 +10,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { CountryService } from '../../services';
+import { UsersService } from './services/users.service';
+import { StorageService } from '../../services/storage.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CountryService } from '../../services';
     UsersComponent
   ],
   providers: [
-    CountryService
+    CountryService,
+    UsersService,
+    StorageService
   ]
 })
 export class UsersModule { }

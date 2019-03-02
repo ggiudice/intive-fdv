@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../../models';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  users: User[];
+
+  constructor(
+    private usersService: UsersService
+  ) { }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  addUser(user: User) {
+
+  }
+
+  // TODO: Ver lo errore
+  private getUsers(): void {
+    this.usersService.getUsers().subscribe((users: User[]) => {
+      this.users = users;
+    });
+  }
+
+  private clearUsers(): void {
+    this.usersService.deleteAllUsers();
   }
 
 }

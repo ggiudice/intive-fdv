@@ -1,6 +1,6 @@
 import { Country } from './country';
 
-export class Person {
+export class User {
     id: number;
     name: string;
     surname: string;

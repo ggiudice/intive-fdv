@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder   } from '@angular/forms';
 
-import { Country } from '../../../../models';
+import { Country, User } from '../../../../models';
 import { CountryService } from '../../../../services';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-user-form',
@@ -21,7 +22,8 @@ export class UserFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private countryService: CountryService
+    private countryService: CountryService,
+    private usersService: UsersService
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,8 @@ export class UserFormComponent implements OnInit {
       return;
     }
 
-    console.log('save');
+    const user = this.converterFormUserToUser();
+    this.usersService.saveUser(user);
   }
 
   // TODO: Poner validadores
@@ -52,13 +55,26 @@ export class UserFormComponent implements OnInit {
     return userForm;
   }
 
-  //TODO: Cach error y mostrar mensaje
+  // TODO: Cach error y mostrar mensaje
   private getCountries(): void {
 
     this.countryService.getCountries().subscribe((countries: Country[]) => {
       this.config.countries = countries;
     });
 
+  }
+
+  private converterFormUserToUser(): User {
+    const country =
+      this.config.countries.find(countrySelected => countrySelected.alpha2Code === this.userForm.value.country);
+
+    const user = new User();
+    user.name = this.userForm.value.name;
+    user.surname = this.userForm.value.surname;
+    user.country = country;
+    user.birthdate = this.userForm.value.birthdate;
+
+    return user;
   }
 }
 
