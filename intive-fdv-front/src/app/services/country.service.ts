@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+
 
 import { Country } from '../models';
 
@@ -21,12 +23,18 @@ export class CountryService {
   // TODO: ver esto de catch y exito como se maneja con obserbace
   // De alguna forma que solo tome los atributos nmecesarios y ponga un hook como comentario
   getCountries(): Observable<Country[]> {
-   /* const contries: Country[] = [];
-    this.httpClient.get<Country[]>(this.API_URL).subscribe((contriesA: Country[]) => {
-      this.contries = contriesA.filter 
-    })*/
-
-    return this.httpClient.get<Country[]>(this.API_URL);
+    return this.httpClient.get<Country[]>(this.API_URL).pipe(
+      map(res => {
+        const countries: Country[] = [];
+        res.forEach(country => {
+          countries.push(new Country(country.name, country.alpha2Code));
+        });
+        return countries;
+      }),
+      catchError(err => {
+        return of([]);
+      })
+    );
   }
 
 }

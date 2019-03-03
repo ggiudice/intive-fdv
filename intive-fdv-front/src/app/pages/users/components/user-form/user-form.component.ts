@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder   } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 import { Country, User } from '../../../../models';
 import { CountryService } from '../../../../services';
@@ -26,18 +26,20 @@ export class UserFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
+    private router: Router,
     private countryService: CountryService,
     private usersService: UsersService
   ) { }
 
   ngOnInit() {
-    this.idParams = +this.route.snapshot.paramMap.get('id');
-    this.userForm = this.createForm(this.idParams);
+    this.route.paramMap.subscribe(paramMap => {
+      this.idParams = +paramMap.get('id');
+      this.userForm = this.createForm(this.idParams);
+    });
     this.getCountries();
-    //this.config.countries = this.getCountries();
   }
 
-  private save(): void {
+  save(): void {
 
     if (this.userForm.valid === false) {
       this.submitted = true;
@@ -46,6 +48,12 @@ export class UserFormComponent implements OnInit {
 
     const user = this.converterFormUserToUser();
     this.usersService.saveUser(user);
+  }
+
+  clearFormUser() {
+    this.idParams = null;
+    this.router.navigate(['/users']);
+    this.userForm.reset();
   }
 
   // TODO: Poner validadores
@@ -64,15 +72,13 @@ export class UserFormComponent implements OnInit {
       name: [user.name, [Validators.required, Validators.maxLength(50)]],
       surname: [user.surname, [Validators.required, Validators.maxLength(50)]],
       country: [user.country && user.country.alpha2Code, [Validators.required]],
-      birthdate: [new Date(user.birthdate) && null, [Validators.required]]
+      birthdate: [user.birthdate ? new Date(user.birthdate) : null, [Validators.required]]
     });
 
     return userForm;
   }
 
-  private clearFormUser() {
-    this.userForm.reset();
-  }
+
   // TODO: Cach error y mostrar mensaje
   private getCountries(): void {
 

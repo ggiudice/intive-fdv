@@ -14,7 +14,7 @@
         <td>{{ user.name }} {{ user.surname }}</td>
         <td>{{ user.country.name }}</td>
         <!-- TODO: Ver esto de la fecha y el formateo pedido y si se puede hacer con locale mejor -->
-        <td>{{ user.birthdate | date }}</td>
+        <td>{{ user.birthdate | date: 'dd/MM/yyyy' }}</td>
       </tr>
     </tbody>
   </table>

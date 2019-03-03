@@ -28,24 +28,25 @@ export class UsersService {
   public getUser(id: number): Observable<User> {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const users: User[] = usersStorage ? JSON.parse(usersStorage) : [];
-    const user = users.find(userSearch => userSearch.id === id);
+    const user = users.find(userSearch => userSearch.id === Number(id));
     return of(user);
   }
 
   //TODO: ver si no falla al estar vacia
+  // TODO: no me pinta que no puedo alterar la lista userList
   public saveUser(user: User): void {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const usersList: User[] = usersStorage ? JSON.parse(usersStorage) : [];
 
-    if (user.id === undefined) {
+    if (user.id === undefined || user.id === null) {
       user.id = this.getId();
       usersList.push(user);
     } else {
-      // TODO: Esto arreglar todo mal, no encuentra el que quiere
-      let userUpdate = this.getUser(user.id).subscribe((userSearch: User) => {
-        return userSearch;
-      });
-      debugger
+      for (let userIndex = 0; userIndex < usersList.length; userIndex++) {
+        if (usersList[userIndex].id === user.id) {
+          usersList[userIndex] = user;
+        }
+      }
     }
 
     const usersString = JSON.stringify(usersList);
@@ -58,9 +59,9 @@ export class UsersService {
 
   //TODO: Investigar este tema en todos los obserbvables revisar, como hacer para que 
   // el return este por fuera
-  private getId() {
+  private getId(): number {
 
-    this.getUsers().subscribe((users: User[]) => {
+   /* this.getUsers().subscribe((users: User[]) => {
 
       let id: number = null;
       while (id === null) {
@@ -71,9 +72,9 @@ export class UsersService {
         }
       }
       return id;
-    });
+    });*/
 
-    return 23;
+    return Math.floor((Math.random() * 1000) + 1);
   }
 
 }

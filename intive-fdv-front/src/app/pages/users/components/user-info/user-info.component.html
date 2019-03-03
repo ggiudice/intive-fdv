@@ -3,6 +3,6 @@
 </div-->
 
 <!-- TODO: -->
-<div class="alert alert-success">
-  Hello Carlos from
+<div class="alert alert-success" *ngIf="user">
+  Hello {{ user.name }} from {{ user.country.name }}
 </div>

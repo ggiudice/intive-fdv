@@ -7,3 +7,20 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+/*s
+
+[
+  '{{repeat(5, 10)}}',
+  {
+    index: '{{index()}}',
+    name: '{{firstName()}}',
+    surname: '{{surname()}}',
+    birthdate: '{{date()}}',
+    country: {
+        name: '{{index()}}',
+        alpha2Code: '{{country()}}'
+      }
+  }
+]
+    */
