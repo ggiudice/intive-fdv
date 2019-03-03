@@ -29,7 +29,10 @@ export class UserFormComponent implements OnInit {
     private router: Router,
     private countryService: CountryService,
     private usersService: UsersService
-  ) { }
+  ) {
+
+    console.log('solo');
+   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {

@@ -5,6 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 
 
 import { Country } from '../models';
+import { ConfigService } from '../shared/config/config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,11 @@ export class CountryService {
   //TOOD: Hacer externa la variable
   private API_URL: string;
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private configService: ConfigService
   ) {
-    this.API_URL = 'https://restcountries.eu/rest/v2/all';
+    this.API_URL = configService.getConfig().apiUrlCountry;
+    //this.API_URL = 'https://restcountries.eu/rest/v2/all';
   }
 
 
