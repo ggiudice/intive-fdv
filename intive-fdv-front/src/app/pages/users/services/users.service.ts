@@ -11,8 +11,6 @@ import { Constants } from '../../../shared/constants/constants';
 })
 export class UsersService {
 
-  //TOOD: Hacer externa la variable
-  private API_URL: string;
   constructor(
     private storageService: StorageService
   ) { }

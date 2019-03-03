@@ -1,4 +1,4 @@
  <!-- TODO: Ver esto de la fecha y el formateo pedido y si se puede hacer con locale mejor -->
 <div class="alert alert-success" *ngIf="user">
-  Hello {{ user.name }} from {{ user.country.name }} your birthday is on {{ user.birthdate | date: 'MM/dd/yyyy' }}
+  {{ localeService.getText(LOCALE.USERS_INFO_USER, [user.name, user.country.name, user.birthdate | date: 'MM/dd/yyyy']) }}
 </div>

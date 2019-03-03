@@ -12,4 +12,29 @@
   min-height: 30px;
   margin-right: 1.2em;
 }
+
+.flag {
+  //background: url(/assets/images/france-flag.png) no-repeat center;
+  width: 40px;
+  height: 15px;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 7px;
+
+  &-es {
+    background: url($image-locale-es) no-repeat center;
+    background-size: contain;
+  }
+  &-en {
+    background: url($image-locale-en) no-repeat center;
+    background-size: contain;
+  }
+  &-fr {
+    background: url($image-locale-fr) no-repeat center;
+    background-size: contain;
+  }
+}// 500 / 333
+
+
+
   

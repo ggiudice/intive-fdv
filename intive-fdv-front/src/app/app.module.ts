@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { ConfigEnv } from './shared/config/config.enviroment';
 import { ConfigService } from './shared/config/config.service';
+import { LocaleService } from './services/locale.service';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ConfigService } from './shared/config/config.service';
   ],
   providers: [
     ConfigService,
-    ConfigEnv
+    ConfigEnv,
+    LocaleService
   ],
   bootstrap: [AppComponent]
 })

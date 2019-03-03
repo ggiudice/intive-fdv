@@ -2,10 +2,9 @@
   <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Country</th>
-        <th scope="col">Birthday</th>
+        <th scope="col">{{ localeService.getText(LOCALE.USERS_TABLE_HEADER_NAME) }}</th>
+        <th scope="col">{{ localeService.getText(LOCALE.USERS_TABLE_HEADER_COUNTRY) }}</th>
+        <th scope="col">{{ localeService.getText(LOCALE.USERS_TABLE_HEADER_BIRTHDAY) }}</th>
       </tr>
     </thead>
     <tbody>
@@ -14,7 +13,6 @@
         [routerLinkActive]="['active']"
         routerLink="/users/{{user.id}}"
         class="cursor-pointer">
-        <th>{{ user.id }}</th>
         <td>{{ user.name }} {{ user.surname }}</td>
         <td>{{ user.country.name }}</td>
         <!-- TODO: Ver esto de la fecha y el formateo pedido y si se puede hacer con locale mejor -->
@@ -25,7 +23,7 @@
 
   <div class="d-flex justify-content-end">
     <button type="button" class="btn btn-primary" (click)="clearUsers()">
-      Clear Data
+        {{ localeService.getText(LOCALE.USERS_TABLE_CLEAR) }}
     </button>
   </div>
 </div>

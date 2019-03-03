@@ -14,9 +14,21 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]="['active']" >
-        <a class="nav-link" [routerLink]="['/users']">Users</a>
-      </li>          
+        <a class="nav-link" [routerLink]="['/users']">{{ localeService.getText(LOCALE.HEADER_NAV_USERS) }}</a>
+      </li>        
     </ul>
-    <span class="pull-rigth d-none d-lg-block">Gustavo Giudice</span>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="flag flag-{{localeId}}"></div>{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE) }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item cursor-pointer" (click)="getLocale('es')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_ES) }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="getLocale('en')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_EN) }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="getLocale('fr')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_FR) }}</a>
+          </div>
+        </li>    
+    </ul>
+    <span class="pull-rigth d-none d-lg-block"><strong>Gustavo Giudice</strong></span>
   </div>
 </nav>

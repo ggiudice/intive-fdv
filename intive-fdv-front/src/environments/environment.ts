@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   config: {
-    apiUrl:  'http://localhost:8080',
-    apiUrlCountry: 'http://localhost:8080/rest/v2/all'
+    locale: 'fr',
+    apiUrl:  'http://localhost:8000',
+    apiUrlCountry: 'https://restcountries.eu/rest/v2/all'
   }
 };
 

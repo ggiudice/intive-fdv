@@ -6,6 +6,8 @@ import { Country, User } from '../../../../models';
 import { CountryService } from '../../../../services';
 import { UsersService } from '../../services/users.service';
 import { isNumber } from 'util';
+import { LocaleService } from '../../../../services/locale.service';
+import { LocaleConstants } from '../../../../shared/constants';
 
 @Component({
   selector: 'app-user-form',
@@ -14,6 +16,7 @@ import { isNumber } from 'util';
 })
 export class UserFormComponent implements OnInit {
 
+  LOCALE = LocaleConstants;
   userForm: FormGroup;
   submitted = false;
   idParams: number;
@@ -22,17 +25,15 @@ export class UserFormComponent implements OnInit {
     maxDate: new Date(),
     countries: []
   };
-
+  
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private countryService: CountryService,
-    private usersService: UsersService
-  ) {
-
-    console.log('solo');
-   }
+    private usersService: UsersService,
+    private localeService: LocaleService
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {

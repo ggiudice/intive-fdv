@@ -52,7 +52,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var server = app.listen(8080, function () {
+var server = app.listen(8000, function () {
   console.log('Example app listening at http://%s:%s', server.address().address, server.address().port);
 });
 

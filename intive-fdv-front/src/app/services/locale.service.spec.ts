@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UsersStorageService } from './users-storage.service';
+import { LocaleService } from './locale.service';
 
-describe('UsersStorageService', () => {
+describe('LocaleService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UsersStorageService = TestBed.get(UsersStorageService);
+    const service: LocaleService = TestBed.get(LocaleService);
     expect(service).toBeTruthy();
   });
 });
