@@ -64,7 +64,7 @@ export class UserFormComponent implements OnInit {
       name: [user.name, [Validators.required, Validators.maxLength(50)]],
       surname: [user.surname, [Validators.required, Validators.maxLength(50)]],
       country: [user.country && user.country.alpha2Code, [Validators.required]],
-      birthdate: [new Date(user.birthdate), [Validators.required]]
+      birthdate: [new Date(user.birthdate) && null, [Validators.required]]
     });
 
     return userForm;

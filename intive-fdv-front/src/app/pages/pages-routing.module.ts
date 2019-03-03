@@ -3,14 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { UsersComponent } from './users/users.component';
+import { HomeComponent } from '../shared/components/home/home.component';
 
 // TODO
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
     component: PagesComponent,
     children: [
+      { path: 'home', component: HomeComponent },
       { path: 'users', component: UsersComponent }
     ]
   }

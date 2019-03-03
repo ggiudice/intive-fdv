@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: PagesComponent },
   //TODO: Hacer andar esto lazy
-  //  { path: '', loadChildren: './pages/pages.module#PagesModule' },
+  //  { path: '', loadChildren: './pages/pages.module#PagesModule' }
   //{ path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
   // TODO: ver rapido de hacer una notFound
  // { path: '**', loadChildren: PageNotFoundComponent}

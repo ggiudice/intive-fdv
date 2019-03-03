@@ -1,15 +1,10 @@
 @import '~src/theme/scss/styles';
 
-.active {
-  border-bottom: 5px solid $colour-primary;
-}
-
 .logo {
   background: url($image-logo) no-repeat center;
   background-size: contain;
   height: auto;
-  min-width: 100px;
-  min-height: 30px;
+  min-height: 100px;
   margin-right: 1.2em;
+  margin-top: 10%;
 }
-  
