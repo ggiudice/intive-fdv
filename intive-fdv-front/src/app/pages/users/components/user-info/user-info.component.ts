@@ -24,20 +24,13 @@ export class UserInfoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   this.route.paramMap.subscribe(paramMap => {
-    this.getUser(+paramMap.get('id'));
-   });
+    this.route.paramMap.subscribe(paramMap => {
+      this.getUser(+paramMap.get('id'));
+    });
   }
 
   private getUser(id: number) {
     this.usersService.getUser(id).subscribe((user: User) =>  this.user = user);
-  /*  this.usersService.getUser(id).subscribe((user: User) => {
-      let infoLocale = this.localeService.getText(LocaleConstants.USERS_INFO_USER);
-      infoLocale = infoLocale.replace('$1', user.name);
-      infoLocale = infoLocale.replace('$2', user.country.name);
-      infoLocale = infoLocale.replace('$3', String(user.birthdate));
-      this.infoLocale = infoLocale;
-    });*/
   }
 
 }

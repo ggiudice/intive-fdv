@@ -106,5 +106,17 @@
     {
         "key": "HEADER_NAV_LOCALE_FR",
         "value": "Français"
+    },
+    {
+        "key": "NOT_FOUND_TITLE",
+        "value": "Page non trouvée!"
+    },
+    {
+        "key": "NOT_FOUND_SUMMARY",
+        "value": "La page à laquelle vous souhaitez accéder n'existe pas"
+    },
+    {
+        "key": "NOT_FOUND_BUTTON_RETURN",
+        "value": "Revenir"
     }
 ]

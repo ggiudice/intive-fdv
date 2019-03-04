@@ -25,7 +25,7 @@ export class UserFormComponent implements OnInit {
     maxDate: new Date(),
     countries: []
   };
-  
+
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -52,6 +52,7 @@ export class UserFormComponent implements OnInit {
 
     const user = this.converterFormUserToUser();
     this.usersService.saveUser(user);
+    this.clearFormUser();
   }
 
   clearFormUser() {

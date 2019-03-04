@@ -8,7 +8,7 @@
         placeholder="{{ localeService.getText(LOCALE.USERS_FORM_PLACEHOLDER_NAME) }}">
     
       <div class="text-danger" *ngIf="submitted">
-        <span *ngIf="userForm.controls.name.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_NAME) }} ffff</span>
+        <span *ngIf="userForm.controls.name.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_NAME) }}</span>
         <span *ngIf="userForm.controls.name.errors?.maxlength">{{ localeService.getText(LOCALE.USERS_FORM_MAXLENGTH_NAME) }}</span>
       </div>      
     </div>

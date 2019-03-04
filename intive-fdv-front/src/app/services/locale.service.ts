@@ -14,6 +14,7 @@ export class LocaleService {
 
   private API_URL: string;
   private API_URL_MOCK = './assets/mock/locale/';
+  private LOCALE_ID = null;
   localeMap: Map<string, string> ;
 
   constructor(
@@ -21,15 +22,20 @@ export class LocaleService {
     private configService: ConfigService
   ) {
     this.API_URL = configService.getConfig().apiUrl;
+    this.LOCALE_ID = configService.getConfig().locale;
   }
 
   getLocale(localeId: string): Observable<boolean> {
     this.getMapLocale(localeId).subscribe(localeMap => {
       this.localeMap = localeMap;
+      this.LOCALE_ID = localeId;
       return of(true);
-    //  return true;
     });
     return of(false);
+  }
+
+  getLocaleId(): string {
+    return this.LOCALE_ID;
   }
 
   private getMapLocale(localeId: string): Observable<Map<string, string>> {

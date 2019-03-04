@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 import { User } from '../../../models';
 import { StorageService } from '../../../services/storage.service';
@@ -10,6 +10,8 @@ import { Constants } from '../../../shared/constants/constants';
   providedIn: 'root'
 })
 export class UsersService {
+
+  usersListChanged = new Subject<User[]>();
 
   constructor(
     private storageService: StorageService
@@ -49,10 +51,12 @@ export class UsersService {
 
     const usersString = JSON.stringify(usersList);
     this.storageService.setItem(Constants.STORAGE_USERS, usersString);
+    this.usersListChanged.next(usersList);
   }
 
   public deleteAllUsers(): void {
     this.storageService.removeItem(Constants.STORAGE_USERS);
+    this.usersListChanged.next([]);
   }
 
   //TODO: Investigar este tema en todos los obserbvables revisar, como hacer para que 

@@ -106,5 +106,17 @@
     {
         "key": "HEADER_NAV_LOCALE_FR",
         "value": "Frances"
+    },
+    {
+        "key": "NOT_FOUND_TITLE",
+        "value": "¡Página no encontrada!"
+    },
+    {
+        "key": "NOT_FOUND_SUMMARY",
+        "value": "La página a la que desea acceder no existe"
+    },
+    {
+        "key": "NOT_FOUND_BUTTON_RETURN",
+        "value": "Volver"
     }
 ]

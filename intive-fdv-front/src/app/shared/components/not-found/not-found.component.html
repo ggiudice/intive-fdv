@@ -1,0 +1,13 @@
+<section id="wrapper" class="error-page">
+  <div class="error-box">
+    <div class="error-body text-center">
+      <h1>404</h1>
+      <h3 class="text-uppercase">{{ localeService.getText(LOCALE.NOT_FOUND_TITLE) }}</h3>
+      <p class="text-muted m-t-30 m-b-30">{{ localeService.getText(LOCALE.NOT_FOUND_SUMMARY) }}</p>
+      <button type="button" (click)="goBack()" class="btn btn-primary m-b-40">
+        {{ localeService.getText(LOCALE.NOT_FOUND_BUTTON_RETURN) }}
+      </button>
+    </div>
+    <br>
+  </div>
+</section>

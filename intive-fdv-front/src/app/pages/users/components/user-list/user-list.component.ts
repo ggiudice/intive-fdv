@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { User } from '../../../../models';
 import { UsersService } from '../../services/users.service';
@@ -14,6 +15,7 @@ export class UserListComponent implements OnInit {
 
   users: User[];
   LOCALE = LocaleConstants;
+  subscription: Subscription;
 
   constructor(
     private usersService: UsersService,
@@ -26,6 +28,10 @@ export class UserListComponent implements OnInit {
 
    // TODO: Ver lo errore
   private getUsers(): void {
+    this.subscription = this.usersService.usersListChanged.subscribe((users: User[]) => {
+      this.users = users;
+    });
+
     this.usersService.getUsers().subscribe((users: User[]) => {
       this.users = users;
     });

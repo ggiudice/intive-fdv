@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { LocaleService } from '../../../services/locale.service';
 import { LocaleConstants } from '../../constants';
-import { ConfigService } from '../../config/config.service';
 
 @Component({
   selector: 'app-header',
@@ -16,11 +15,10 @@ export class HeaderComponent implements OnInit {
   localeService;
 
   constructor(
-    localeService: LocaleService,
-    private configService: ConfigService
+    localeService: LocaleService
   ) {
     this.localeService = localeService;
-    this.localeId = this.configService.getConfig().locale;
+    this.localeId = this.localeService.getLocaleId();
   }
 
   ngOnInit() { }

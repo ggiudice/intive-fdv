@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { LocaleService } from './services/locale.service';
-import { ConfigService } from './shared/config/config.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +11,9 @@ export class AppComponent {
 
   readyWeb = false;
   constructor(
-    private localeService: LocaleService,
-    private configService: ConfigService
+    private localeService: LocaleService
   ) {
-    const localeEnviroment = configService.getConfig().locale;
-    console.log(localeEnviroment);
+    const localeEnviroment = this.localeService.getLocaleId();
     this.localeService.getLocale(localeEnviroment).subscribe(rta => {
       this.readyWeb = true;
     });

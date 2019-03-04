@@ -15,8 +15,8 @@ import { LocaleService } from './services/locale.service';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     HttpClientModule,
     PagesModule
   ],
