@@ -28,7 +28,6 @@ export class UserListComponent implements OnInit {
     this.getUsers();
   }
 
-   // TODO: Ver lo errore
   private getUsers(): void {
     this.usersService.getUsers().subscribe((users: User[]) => {
       this.users = users;

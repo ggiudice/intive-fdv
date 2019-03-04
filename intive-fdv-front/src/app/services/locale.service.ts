@@ -50,22 +50,6 @@ export class LocaleService {
     return this.LOCALE_ID;
   }
 
-  public getLocaleDate(): string {
-    let localeDate = 'en-US';
-    switch (this.LOCALE_ID) {
-      case 'es': {
-        localeDate = 'es-AR';
-        break;
-      }
-      case 'fr': {
-        localeDate = 'fr-CA';
-        break;
-      }
-    }
-    return localeDate;
-  }
-
-
   /**
    * Gets the text based on the key, and if a string list is sent it is 
    * replaced in the text. Ej Hello $ 1 -> Hello Carlos

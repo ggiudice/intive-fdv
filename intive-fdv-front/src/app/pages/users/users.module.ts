@@ -4,15 +4,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 
+import { PipesModule } from '../../pipes/pipes.module';
+import { SharedModule } from '../../shared/shared.module';
+
 import { UsersComponent } from './users.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserFormComponent, UserListComponent, UserInfoComponent } from './components';
 import { UsersRoutingModule } from './users-routing.module';
 import { CountryService } from '../../services';
 import { UsersService } from './services/users.service';
 import { StorageService } from '../../services/storage.service';
-import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { PipesModule } from '../../pipes/pipes.module';
   imports: [
     CommonModule,
     PipesModule,
+    SharedModule,
     UsersRoutingModule,
     ReactiveFormsModule,
     NgSelectModule,

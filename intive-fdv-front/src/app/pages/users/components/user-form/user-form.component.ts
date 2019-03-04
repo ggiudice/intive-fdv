@@ -5,7 +5,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Country, User } from '../../../../models';
 import { CountryService } from '../../../../services';
 import { UsersService } from '../../services/users.service';
-import { isNumber } from 'util';
+import { isNumber, isError } from 'util';
 import { LocaleService } from '../../../../services/locale.service';
 import { LocaleConstants } from '../../../../shared/constants';
 
@@ -20,7 +20,7 @@ export class UserFormComponent implements OnInit {
   userForm: FormGroup;
   submitted = false;
   idParams: number;
-  //TODO: MEJORAR ESTO
+  isError = false;
   config: ConfigUserForm = {
     maxDate: new Date(),
     countries: []
@@ -56,13 +56,13 @@ export class UserFormComponent implements OnInit {
   }
 
   clearFormUser() {
+    this.isError = false;
     this.idParams = null;
     this.submitted = false;
     this.router.navigate(['/users']);
     this.userForm.reset();
   }
 
-  // TODO: Poner validadores
   private createForm(id: number): FormGroup {
 
     let user = new User();
@@ -84,14 +84,13 @@ export class UserFormComponent implements OnInit {
     return userForm;
   }
 
-
-  // TODO: Cach error y mostrar mensaje
   private getCountries(): void {
-
     this.countryService.getCountries().subscribe((countries: Country[]) => {
       this.config.countries = countries;
+    },
+    error => {
+      this.isError = true;
     });
-
   }
 
   private converterFormUserToUser(): User {

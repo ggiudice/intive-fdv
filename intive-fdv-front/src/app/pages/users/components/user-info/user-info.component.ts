@@ -34,7 +34,9 @@ export class UserInfoComponent implements OnInit {
 
     this.subscriptionLocale = this.localeService.localeChanged.subscribe(() => {
       // Hook change locale date pipe
-      this.user.birthdate = new Date(this.user.birthdate);
+      if (this.user) {
+       this.user.birthdate = new Date(this.user.birthdate);
+      }
     });
   }
 

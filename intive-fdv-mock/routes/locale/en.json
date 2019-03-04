@@ -118,5 +118,9 @@
     {
         "key": "NOT_FOUND_BUTTON_RETURN",
         "value": "Return"
+    },
+    {
+        "key": "SERVICE_ERROR_COUNTRIES",
+        "value": "Problems to recover the countries. Try again later"
     }
 ]

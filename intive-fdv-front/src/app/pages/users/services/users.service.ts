@@ -17,14 +17,12 @@ export class UsersService {
     private storageService: StorageService
   ) { }
 
-  // TODO: ver esto de catch y exito como se maneja con obserbace
   public getUsers(): Observable<User[]> {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const users: User[] = usersStorage ? JSON.parse(usersStorage) : [];
     return of(users);
   }
 
-  // TODO: ver siu hace falta ya que es lo que ya esta en la vista.., pero lo haria igua
   public getUser(id: number): Observable<User> {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const users: User[] = usersStorage ? JSON.parse(usersStorage) : [];
@@ -32,8 +30,6 @@ export class UsersService {
     return of(user);
   }
 
-  //TODO: ver si no falla al estar vacia
-  // TODO: no me pinta que no puedo alterar la lista userList
   public saveUser(user: User): void {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const usersList: User[] = usersStorage ? JSON.parse(usersStorage) : [];

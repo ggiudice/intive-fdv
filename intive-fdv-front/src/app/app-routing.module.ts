@@ -15,7 +15,6 @@ const routes: Routes = [
       routes,
       {
         useHash: true
-        //preloadingStrategy: PreloadAllModules
       }
     )
   ],

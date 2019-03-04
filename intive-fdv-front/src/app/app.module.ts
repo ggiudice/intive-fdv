@@ -10,6 +10,7 @@ import { ConfigEnv } from './shared/config/config.enviroment';
 import { ConfigService } from './shared/config/config.service';
 import { LocaleService } from './services/locale.service';
 
+
 @NgModule({
   declarations: [
     AppComponent

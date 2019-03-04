@@ -20,9 +20,6 @@ export class CountryService {
     this.API_URL = configService.getConfig().apiUrlCountry;
   }
 
-
-  // TODO: ver esto de catch y exito como se maneja con obserbace
-  // De alguna forma que solo tome los atributos nmecesarios y ponga un hook como comentario
   getCountries(): Observable<Country[]> {
     return this.httpClient.get<Country[]>(this.API_URL).pipe(
       map(res => {
@@ -31,9 +28,6 @@ export class CountryService {
           countries.push(new Country(country.name, country.alpha2Code));
         });
         return countries;
-      }),
-      catchError(err => {
-        return of([]);
       })
     );
   }

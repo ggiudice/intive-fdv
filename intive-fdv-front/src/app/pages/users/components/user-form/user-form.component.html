@@ -1,4 +1,6 @@
-<form [formGroup]="userForm" (submit)="save()">
+<app-error [message]="isError && localeService.getText(LOCALE.SERVICE_ERROR_COUNTRIES)"></app-error>
+
+<form [formGroup]="userForm" (submit)="save()" *ngIf="!isError">
 
   <div class="form-row">
     <!-- Name -->

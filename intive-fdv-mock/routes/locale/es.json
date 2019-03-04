@@ -118,5 +118,9 @@
     {
         "key": "NOT_FOUND_BUTTON_RETURN",
         "value": "Volver"
+    },
+    {
+        "key": "SERVICE_ERROR_COUNTRIES",
+        "value": "Problemas para recuperar los paises. Intente nuevamente mas tarde."
     }
 ]
