@@ -33,7 +33,7 @@ export class UsersService {
   /**
    * Save or update user in localStore depends if the user already exists
    *
-   * @param user
+   * @param user User for update or save
    */
   public saveUser(user: User): void {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);

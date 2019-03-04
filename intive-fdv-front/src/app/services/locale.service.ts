@@ -35,7 +35,7 @@ export class LocaleService {
    * Set the language change.
    * Change of locale for formatting dates.
    * And notify the subscribers that there was language change
-   * @param localeId
+   * @param localeId to setter new locale
    */
   public setLocale(localeId: string): Observable<boolean> {
     return this.getMapLocale(localeId).pipe(
@@ -57,10 +57,10 @@ export class LocaleService {
   }
 
   /**
-   * Gets the text based on the key, and if a string list is sent it is 
+   * Gets the text based on the key, and if a string list is sent it is
    * replaced in the text. Ej Hello $ 1 -> Hello Carlos
-   * @param key
-   * @param extra
+   * @param key key for map of constants de locale-constants
+   * @param extra optional for string replace for full string
    */
   public getText(key: string, extra: string[] = null): string {
 
@@ -86,7 +86,7 @@ export class LocaleService {
    * Gets the texts of the past language as an argument and transforms it into a map
    * for better use.
    * If the server is not active or gives an error, it retrieves it locally from angular.
-   * @param localeId
+   * @param localeId to retrieve texts from the service
    */
   private getMapLocale(localeId: string): Observable<Map<string, string>> {
 
@@ -115,7 +115,7 @@ export class LocaleService {
 
   /**
    * Register change locale Format Date commons
-   * @param localeId
+   * @param localeId to retrieve texts from register date commons angular
    */
   private registerLocale(localeId: string) {
 
