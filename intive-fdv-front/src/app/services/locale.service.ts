@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import localeEn from '@angular/common/locales/en';
+import localeFr from '@angular/common/locales/fr';
 
 import { ConfigService } from '../shared/config/config.service';
 import { Locale } from '../models';
@@ -15,7 +20,8 @@ export class LocaleService {
   private API_URL: string;
   private API_URL_MOCK = './assets/mock/locale/';
   private LOCALE_ID = null;
-  localeMap: Map<string, string> ;
+  private localeMap: Map<string, string> ;
+  public localeChanged = new Subject<any>();
 
   constructor(
     private httpClient: HttpClient,
@@ -30,6 +36,8 @@ export class LocaleService {
       map(localeMap => {
         this.localeMap = localeMap;
         this.LOCALE_ID = localeId;
+        this.registerLocale(localeId);
+        this.localeChanged.next();
         return true;
       }),
       catchError(err => {
@@ -40,6 +48,48 @@ export class LocaleService {
 
   public getLocaleId(): string {
     return this.LOCALE_ID;
+  }
+
+  public getLocaleDate(): string {
+    let localeDate = 'en-US';
+    switch (this.LOCALE_ID) {
+      case 'es': {
+        localeDate = 'es-AR';
+        break;
+      }
+      case 'fr': {
+        localeDate = 'fr-CA';
+        break;
+      }
+    }
+    return localeDate;
+  }
+
+
+  /**
+   * Gets the text based on the key, and if a string list is sent it is 
+   * replaced in the text. Ej Hello $ 1 -> Hello Carlos
+   * @param key
+   * @param extra
+   */
+  public getText(key: string, extra: string[] = null): string {
+
+    if (this.localeMap === undefined || this.localeMap === null ) {
+      return;
+    }
+
+    let text = null;
+    if (extra === null) {
+      text = this.localeMap.get(key);
+    } else {
+      let valueReplace = this.localeMap.get(key);
+      for (let index = 0; index < extra.length; index++) {
+        valueReplace = valueReplace.replace('$' + index, extra[index]);
+      }
+      text = valueReplace;
+    }
+
+    return text;
   }
 
   /**
@@ -71,32 +121,24 @@ export class LocaleService {
         );
       })
     );
-
   }
 
-  /**
-   * Gets the text based on the key, and if a string list is sent it is 
-   * replaced in the text. Ej Hello $ 1 -> Hello Carlos
-   * @param key
-   * @param extra
-   */
-  getText(key: string, extra: string[] = null): string {
+  private registerLocale(localeId: string) {
 
-    if (this.localeMap === undefined || this.localeMap === null ) {
-      return;
-    }
-
-    let text = null;
-    if (extra === null) {
-      text = this.localeMap.get(key);
-    } else {
-      let valueReplace = this.localeMap.get(key);
-      for (let index = 0; index < extra.length; index++) {
-        valueReplace = valueReplace.replace('$' + index, extra[index]);
+    switch (localeId) {
+      case 'es': {
+        registerLocaleData(localeEs);
+        break;
       }
-      text = valueReplace;
+      case 'en': {
+        registerLocaleData(localeEn);
+        break;
+      }
+      case 'fr': {
+        registerLocaleData(localeFr);
+        break;
+      }
     }
-
-    return text;
   }
 }
+

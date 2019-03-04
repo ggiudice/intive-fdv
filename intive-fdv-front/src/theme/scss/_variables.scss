@@ -9,6 +9,13 @@ $colour-black: #000000;
 $colour-gray : #676464;
 $colour-light-gray: lighten($colour-gray, 30%);
 
+// Fuentes
+$font-size-ulta-soft: 0.6em;
+$font-size-soft: 0.8em;
+$font-size-medium: 1.0em;
+$font-size-large: 1.2em;
+$font-size-hard: 1.5em;
+
 // Imagenes
 $image-logo: '/assets/images/intiveFDVlogo.png';
 $imagen-app-error: '/assets/images/app-error.png';

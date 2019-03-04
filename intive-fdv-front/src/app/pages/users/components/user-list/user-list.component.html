@@ -15,8 +15,7 @@
         class="cursor-pointer">
         <td>{{ user.name }} {{ user.surname }}</td>
         <td>{{ user.country.name }}</td>
-        <!-- TODO: Ver esto de la fecha y el formateo pedido y si se puede hacer con locale mejor -->
-        <td>{{ user.birthdate | date: 'MM/dd/yyyy' }}</td>
+        <td>{{ user.birthdate | localDate }}</td>
       </tr>
     </tbody>
   </table>

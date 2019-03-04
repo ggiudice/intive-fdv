@@ -12,6 +12,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { CountryService } from '../../services';
 import { UsersService } from './services/users.service';
 import { StorageService } from '../../services/storage.service';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { StorageService } from '../../services/storage.service';
   ],
   imports: [
     CommonModule,
+    PipesModule,
     UsersRoutingModule,
     ReactiveFormsModule,
     NgSelectModule,

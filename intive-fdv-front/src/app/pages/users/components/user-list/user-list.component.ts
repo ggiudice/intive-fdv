@@ -16,6 +16,7 @@ export class UserListComponent implements OnInit {
   users: User[];
   LOCALE = LocaleConstants;
   subscription: Subscription;
+  subscriptionLocale: Subscription;
 
   constructor(
     private usersService: UsersService,
@@ -23,15 +24,12 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.addSbscritions();
     this.getUsers();
   }
 
    // TODO: Ver lo errore
   private getUsers(): void {
-    this.subscription = this.usersService.usersListChanged.subscribe((users: User[]) => {
-      this.users = users;
-    });
-
     this.usersService.getUsers().subscribe((users: User[]) => {
       this.users = users;
     });
@@ -41,4 +39,16 @@ export class UserListComponent implements OnInit {
     this.usersService.deleteAllUsers();
   }
 
+  // Subscriptions
+  private addSbscritions(){
+    this.subscription = this.usersService.usersListChanged.subscribe((users: User[]) => {
+      this.users = users;
+    });
+
+    this.subscriptionLocale = this.localeService.localeChanged.subscribe(() => {
+      this.usersService.getUsers().subscribe((users: User[]) => {
+        this.users = users;
+      });
+    });
+  }
 }

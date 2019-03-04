@@ -39,7 +39,7 @@ export class UsersService {
     const usersList: User[] = usersStorage ? JSON.parse(usersStorage) : [];
 
     if (user.id === undefined || user.id === null) {
-      user.id = this.getId();
+      user.id = Math.floor((Math.random() * 10000) + 1);
       usersList.push(user);
     } else {
       for (let userIndex = 0; userIndex < usersList.length; userIndex++) {
@@ -57,26 +57,6 @@ export class UsersService {
   public deleteAllUsers(): void {
     this.storageService.removeItem(Constants.STORAGE_USERS);
     this.usersListChanged.next([]);
-  }
-
-  //TODO: Investigar este tema en todos los obserbvables revisar, como hacer para que 
-  // el return este por fuera
-  private getId(): number {
-
-   /* this.getUsers().subscribe((users: User[]) => {
-
-      let id: number = null;
-      while (id === null) {
-        const randomId = Math.floor((Math.random() * 1000) + 1);
-        const userFound: User = users.find(user => user.id === randomId);
-        if (userFound === undefined) {
-          id = randomId;
-        }
-      }
-      return id;
-    });*/
-
-    return Math.floor((Math.random() * 1000) + 1);
   }
 
 }
