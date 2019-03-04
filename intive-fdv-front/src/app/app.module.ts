@@ -10,6 +10,12 @@ import { ConfigEnv } from './shared/config/config.enviroment';
 import { ConfigService } from './shared/config/config.service';
 import { LocaleService } from './services/locale.service';
 
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { enGbLocale, esLocale, frLocale} from 'ngx-bootstrap/locale';
+
+defineLocale('es', esLocale);
+defineLocale('en', enGbLocale);
+defineLocale('fr', frLocale);
 
 @NgModule({
   declarations: [

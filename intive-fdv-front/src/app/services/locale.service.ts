@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
@@ -25,7 +26,8 @@ export class LocaleService {
 
   constructor(
     private httpClient: HttpClient,
-    private configService: ConfigService
+    private configService: ConfigService,
+    private bsLocaleService: BsLocaleService
   ) {
     this.API_URL = configService.getConfig().apiUrl;
     this.LOCALE_ID = configService.getConfig().locale;
@@ -119,6 +121,7 @@ export class LocaleService {
    */
   private registerLocale(localeId: string) {
 
+    // Locale of date commons angular
     switch (localeId) {
       case 'es': {
         registerLocaleData(localeEs);
@@ -133,6 +136,9 @@ export class LocaleService {
         break;
       }
     }
+
+    // Locale of ngx-bootrap
+    this.bsLocaleService.use(localeId);
   }
 }
 
