@@ -25,19 +25,29 @@ export class LocaleService {
     this.LOCALE_ID = configService.getConfig().locale;
   }
 
-  getLocale(localeId: string): Observable<boolean> {
-    this.getMapLocale(localeId).subscribe(localeMap => {
-      this.localeMap = localeMap;
-      this.LOCALE_ID = localeId;
-      return of(true);
-    });
-    return of(false);
+  public getLocale(localeId: string): Observable<boolean> {
+    return this.getMapLocale(localeId).pipe(
+      map(localeMap => {
+        this.localeMap = localeMap;
+        this.LOCALE_ID = localeId;
+        return true;
+      }),
+      catchError(err => {
+        return of(false);
+      })
+    );
   }
 
-  getLocaleId(): string {
+  public getLocaleId(): string {
     return this.LOCALE_ID;
   }
 
+  /**
+   * Gets the texts of the past language as an argument and transforms it into a map
+   * for better use.
+   * If the server is not active or gives an error, it retrieves it locally from angular.
+   * @param localeId
+   */
   private getMapLocale(localeId: string): Observable<Map<string, string>> {
 
     return this.httpClient.get<Locale[]>(this.API_URL + '/locale/' + localeId).pipe(
@@ -64,6 +74,12 @@ export class LocaleService {
 
   }
 
+  /**
+   * Gets the text based on the key, and if a string list is sent it is 
+   * replaced in the text. Ej Hello $ 1 -> Hello Carlos
+   * @param key
+   * @param extra
+   */
   getText(key: string, extra: string[] = null): string {
 
     if (this.localeMap === undefined || this.localeMap === null ) {

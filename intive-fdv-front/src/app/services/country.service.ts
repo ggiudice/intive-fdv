@@ -24,6 +24,7 @@ export class CountryService {
   // TODO: ver esto de catch y exito como se maneja con obserbace
   // De alguna forma que solo tome los atributos nmecesarios y ponga un hook como comentario
   getCountries(): Observable<Country[]> {
+    debugger
     return this.httpClient.get<Country[]>(this.API_URL).pipe(
       map(res => {
         const countries: Country[] = [];

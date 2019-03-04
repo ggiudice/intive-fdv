@@ -57,6 +57,7 @@ export class UserFormComponent implements OnInit {
 
   clearFormUser() {
     this.idParams = null;
+    this.submitted = false;
     this.router.navigate(['/users']);
     this.userForm.reset();
   }
