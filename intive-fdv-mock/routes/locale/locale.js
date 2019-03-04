@@ -10,17 +10,24 @@ var enJson = require('./en.json');
 /* GET lenguage by locale. */
 router.get('/:localeId', function(req, res, next) {
 
+  var ERROR = false;
+
   let locale = esJson;
-  console.log(req.params.localeId)
   if(req.params.localeId == 'en') {
-    console.log('entro en es')
     locale = enJson;
   } else if (req.params.localeId == 'fr'){
-    console.log('entro en fr')
     locale = frJson;
   }
+  
+  setTimeout(function () {
+    if(!ERROR) {
+      res.status(200).json(locale);
+    } else {
 
-  res.status(200).json(locale);
+      // No hay definidos codigos de errores.
+      res.status(400).json({});
+    }
+  }, 300);
 });
 
 module.exports = router;
