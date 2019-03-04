@@ -38,8 +38,7 @@ export class UserListComponent implements OnInit {
     this.usersService.deleteAllUsers();
   }
 
-  // Subscriptions
-  private addSbscritions(){
+  private addSbscritions() {
     this.subscription = this.usersService.usersListChanged.subscribe((users: User[]) => {
       this.users = users;
     });

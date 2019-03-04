@@ -23,9 +23,9 @@
             <div class="flag flag-{{localeId}}"></div>{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE) }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item cursor-pointer" (click)="getLocale('es')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_ES) }}</a>
-            <a class="dropdown-item cursor-pointer" (click)="getLocale('en')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_EN) }}</a>
-            <a class="dropdown-item cursor-pointer" (click)="getLocale('fr')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_FR) }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="setLocale('es')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_ES) }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="setLocale('en')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_EN) }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="setLocale('fr')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_FR) }}</a>
           </div>
         </li>    
     </ul>

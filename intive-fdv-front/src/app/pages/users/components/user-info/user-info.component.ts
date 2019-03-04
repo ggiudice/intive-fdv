@@ -18,7 +18,6 @@ export class UserInfoComponent implements OnInit {
   LOCALE = LocaleConstants;
   infoLocale: string;
   subscriptionLocale: Subscription;
-  paramsId = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +27,6 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-      this.paramsId = +paramMap.get('id');
       this.getUser(+paramMap.get('id'));
     });
 

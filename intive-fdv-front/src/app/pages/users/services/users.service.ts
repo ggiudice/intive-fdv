@@ -30,6 +30,11 @@ export class UsersService {
     return of(user);
   }
 
+  /**
+   * Save or update user in localStore depends if the user already exists
+   *
+   * @param user
+   */
   public saveUser(user: User): void {
     const usersStorage = this.storageService.getItem(Constants.STORAGE_USERS);
     const usersList: User[] = usersStorage ? JSON.parse(usersStorage) : [];

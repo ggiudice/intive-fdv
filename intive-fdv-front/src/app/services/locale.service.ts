@@ -31,7 +31,13 @@ export class LocaleService {
     this.LOCALE_ID = configService.getConfig().locale;
   }
 
-  public getLocale(localeId: string): Observable<boolean> {
+  /**
+   * Set the language change.
+   * Change of locale for formatting dates.
+   * And notify the subscribers that there was language change
+   * @param localeId
+   */
+  public setLocale(localeId: string): Observable<boolean> {
     return this.getMapLocale(localeId).pipe(
       map(localeMap => {
         this.localeMap = localeMap;
@@ -107,6 +113,10 @@ export class LocaleService {
     );
   }
 
+  /**
+   * Register change locale Format Date commons
+   * @param localeId
+   */
   private registerLocale(localeId: string) {
 
     switch (localeId) {

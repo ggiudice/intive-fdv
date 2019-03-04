@@ -12,19 +12,17 @@ export class HeaderComponent implements OnInit {
 
   LOCALE = LocaleConstants;
   localeId = null;
-  localeService;
 
   constructor(
-    localeService: LocaleService
+    private localeService: LocaleService
   ) {
-    this.localeService = localeService;
     this.localeId = this.localeService.getLocaleId();
   }
 
   ngOnInit() { }
 
-  getLocale(localeId: string) {
+  setLocale(localeId: string) {
     this.localeId = localeId;
-    this.localeService.getLocale(localeId).subscribe();
+    this.localeService.setLocale(localeId).subscribe();
   }
 }

@@ -6,10 +6,10 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { PipesModule } from '../../pipes/pipes.module';
 import { SharedModule } from '../../shared/shared.module';
+import { UsersRoutingModule } from './users-routing.module';
 
 import { UsersComponent } from './users.component';
 import { UserFormComponent, UserListComponent, UserInfoComponent } from './components';
-import { UsersRoutingModule } from './users-routing.module';
 import { CountryService } from '../../services';
 import { UsersService } from './services/users.service';
 import { StorageService } from '../../services/storage.service';

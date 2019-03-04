@@ -67,18 +67,14 @@ export class UserFormComponent implements OnInit {
 
     let user = new User();
     if (id !== 0 && isNaN(id) === false) {
-      // TODO: reever esto no me gusta mucho.
-      // Esto sucede si esta vacia la lista y se busca uno que no encuentra
-      this.usersService.getUser(id).subscribe((userFound: User) => {
-        user = userFound ? userFound : new User();
-      });
+      this.usersService.getUser(id).subscribe((userFound: User) => user  = userFound);
     }
 
     const userForm = this.fb.group({
-      name: [user.name, [Validators.required, Validators.maxLength(50)]],
-      surname: [user.surname, [Validators.required, Validators.maxLength(50)]],
-      country: [user.country && user.country.alpha2Code, [Validators.required]],
-      birthdate: [user.birthdate ? new Date(user.birthdate) : null, [Validators.required]]
+      name: [user && user.name, [Validators.required, Validators.maxLength(50)]],
+      surname: [user && user.surname, [Validators.required, Validators.maxLength(50)]],
+      country: [user && user.country && user.country.alpha2Code, [Validators.required]],
+      birthdate: [user && user.birthdate ? new Date(user.birthdate) : null, [Validators.required]]
     });
 
     return userForm;

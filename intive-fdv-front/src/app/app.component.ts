@@ -16,7 +16,7 @@ export class AppComponent {
     private localeService: LocaleService
   ) {
     const localeEnviroment = this.localeService.getLocaleId();
-    this.localeService.getLocale(localeEnviroment).subscribe(isReady => {
+    this.localeService.setLocale(localeEnviroment).subscribe(isReady => {
       this.readyWeb = isReady;
       this.fatalError = !isReady;
     });
