@@ -28,6 +28,8 @@ Actualmente obtiene los textos de la web para los diferentes idiomas seleccionab
 
 Para levantar este servidor se debe realizar: `node app.js` (se aconseja usar node-dev para ir realizando cambios y no deber restartear el server)
 
+### Build generado
+En la carpeta otros se encuentra el build generado por si no se tiene angular instalado. Para ello debo descomprimir la carpeta dentro de apache y en el navegador acceder a la web: `http://localhost:8080/intive-fdv-front/`
 
 ### Pendientes
 
