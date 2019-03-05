@@ -32,5 +32,6 @@ Para levantar este servidor se debe realizar: `node app.js` (se aconseja usar no
 ### Pendientes
 
 - Hacer que por medio de enviroment se pueda configurar si se desea usar el backend mock o el localStorage para la gestión de usuarios
-- Aprender lo del Handler Error generico y/o mejorar la idea de error en general que quede con un servicio, ms genérico, que al cambiar idioma también se enteren los mensajes de error, etc.
+- Aprender lo del Handler Error generico (No con respecto a peticiones al servidor con un HttpInterceptor) y/o mejorar la idea de error en general que quede con un servicio, ms genérico, que al cambiar idioma también se enteren los mensajes de error, etc.
 - Rever criterio de aviso de cambio de lenguaje para los textos que están en el DOM html, parecido a lo que de alguna forma hice con los locale de las fecha. Evaluar hacer un pipe que realice eso en los textos.
+- Si se hace mas servicios al backend, meter el concepto de HttpInterceptor con un header pasando un token.

@@ -10,7 +10,7 @@ export class LocalDatePipe implements PipeTransform {
 
   constructor(private localeService: LocaleService) { }
 
-  transform(value: any, format: string): any {
+  transform(value: any, format?: string): any {
     if (!value) { return ''; }
     if (!format) { format = 'shortDate'; }
 
