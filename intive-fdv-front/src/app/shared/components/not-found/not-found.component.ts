@@ -12,10 +12,13 @@ import { LocaleConstants } from '../../constants';
 export class NotFoundComponent implements OnInit {
 
   LOCALE = LocaleConstants;
+  localeService: LocaleService;
   constructor(
     private location: Location,
-    private localeService: LocaleService
-  ) { }
+    localeService: LocaleService
+  ) {
+    this.localeService = localeService;
+  }
 
   ngOnInit() {
   }

@@ -12,10 +12,12 @@ export class HeaderComponent implements OnInit {
 
   LOCALE = LocaleConstants;
   localeId = null;
+  localeService: LocaleService;
 
   constructor(
-    private localeService: LocaleService
+    localeService: LocaleService
   ) {
+    this.localeService = localeService;
     this.localeId = this.localeService.getLocaleId();
   }
 

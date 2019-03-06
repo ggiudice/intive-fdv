@@ -21,6 +21,7 @@ export class UserFormComponent implements OnInit {
   submitted = false;
   idParams: number;
   isError = false;
+  localeService: LocaleService;
   config: ConfigUserForm = {
     maxDate: new Date(),
     countries: []
@@ -32,8 +33,10 @@ export class UserFormComponent implements OnInit {
     private router: Router,
     private countryService: CountryService,
     private usersService: UsersService,
-    private localeService: LocaleService
-  ) { }
+    localeService: LocaleService
+  ) {
+    this.localeService = localeService;
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
