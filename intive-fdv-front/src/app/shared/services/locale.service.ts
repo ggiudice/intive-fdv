@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
@@ -9,9 +9,8 @@ import localeEs from '@angular/common/locales/es';
 import localeEn from '@angular/common/locales/en';
 import localeFr from '@angular/common/locales/fr';
 
-import { ConfigService } from '../shared/config/config.service';
-import { Locale } from '../models';
-import { LocaleConstants } from '../shared/constants';
+import { ConfigService } from '@gg/shared/config';
+import { Locale } from '@gg/shared/models';
 
 @Injectable({
   providedIn: 'root'

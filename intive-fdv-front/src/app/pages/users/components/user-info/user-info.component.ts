@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { UsersService } from '../../services/users.service';
-import { User } from '../../../../models';
-import { LocaleService } from '../../../../services/locale.service';
-import { LocaleConstants } from '../../../../shared/constants';
 import { Subscription } from 'rxjs';
+
+import { UsersService } from '@gg/users/services';
+import { LocaleService } from '@gg/shared/services';
+import { LocaleConstants } from '@gg/shared/constants';
+import { User } from '@gg/users/models';
 
 @Component({
   selector: 'app-user-info',

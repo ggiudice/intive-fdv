@@ -1,4 +1,4 @@
-import { Country } from './country';
+import { Country } from '@gg/shared/models';
 
 export class User {
     id: number;

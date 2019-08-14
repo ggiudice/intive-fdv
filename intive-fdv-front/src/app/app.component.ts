@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { LocaleService } from './services/locale.service';
+import { LocaleService } from './shared/services/locale.service';
 
 @Component({
   selector: 'app-root',

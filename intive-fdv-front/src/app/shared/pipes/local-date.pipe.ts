@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { formatDate } from '@angular/common';
 
-import { LocaleService } from '../services/locale.service';
+import { LocaleService } from '@gg/shared/services';
 
 @Pipe({
   name: 'localDate'

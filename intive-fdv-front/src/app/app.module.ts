@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CachingInterceptor } from './interceptors/caching-Interceptor';
+import { CachingInterceptor } from './shared/interceptors/caching-Interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { ConfigEnv } from './shared/config/config.enviroment';
 import { ConfigService } from './shared/config/config.service';
-import { LocaleService } from './services/locale.service';
+import { LocaleService } from './shared/services/locale.service';
 
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { enGbLocale, esLocale, frLocale} from 'ngx-bootstrap/locale';

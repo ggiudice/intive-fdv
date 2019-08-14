@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { User } from '../../../../models';
-import { UsersService } from '../../services/users.service';
-import { LocaleConstants } from '../../../../shared/constants';
-import { LocaleService } from '../../../../services/locale.service';
+import { UsersService } from '@gg/users/services';
+import { LocaleConstants } from '@gg/shared/constants';
+import { LocaleService } from '@gg/shared/services';
+import { User } from '@gg/users/models';
 
 @Component({
   selector: 'app-user-list',

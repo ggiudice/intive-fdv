@@ -1,0 +1,1 @@
+export { LocalDatePipe } from './local-date.pipe';

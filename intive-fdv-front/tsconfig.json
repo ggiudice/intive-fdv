@@ -1,6 +1,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@gg/shared/components": ["./src/app/shared/components/index.ts"],
+      "@gg/shared/services": ["./src/app/shared/services/index.ts"],
+      "@gg/shared/models": ["./src/app/shared/models/index.ts"],
+      "@gg/shared/constants": ["./src/app/shared/constants/index.ts"],
+      "@gg/shared/config": ["./src/app/shared/config/index.ts"],
+
+      "@gg/users/components": ["./src/app/pages/users/components/index.ts"],
+      "@gg/users/services": ["./src/app/pages/users/services/index.ts"],
+      "@gg/users/models": ["./src/app/pages/users/models/index.ts"],
+    
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
