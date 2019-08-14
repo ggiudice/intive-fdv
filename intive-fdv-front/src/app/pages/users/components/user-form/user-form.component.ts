@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder   } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 
-import { Country } from '@gg/shared/models';
-import { CountryService } from '@gg/shared/services';
-import { UsersService } from '@gg/users/services';
-import { LocaleService } from '@gg/shared/services';
-import { LocaleConstants } from '@gg/shared/constants';
-import { User } from '@gg/users/models';
+import { Country } from '@cdc/shared/models';
+import { CountryService } from '@cdc/shared/services';
+import { UsersService } from '@cdc/users/services';
+import { LocaleService } from '@cdc/shared/services';
+import { LocaleConstants } from '@cdc/shared/constants';
+import { User } from '@cdc/users/models';
 
 @Component({
   selector: 'app-user-form',

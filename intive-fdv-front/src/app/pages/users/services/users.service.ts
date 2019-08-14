@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 
-import { StorageService } from '@gg/shared/services';
-import { Constants } from '@gg/shared/constants';
-import { User } from '@gg/users/models';
+import { StorageService } from '@cdc/shared/services';
+import { Constants } from '@cdc/shared/constants';
+import { User } from '@cdc/users/models';
 
 @Injectable({
   providedIn: 'root'

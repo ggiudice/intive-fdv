@@ -4,8 +4,8 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 
-import { Country } from '@gg/shared/models';
-import { ConfigService } from '@gg/shared/config';
+import { Country } from '@cdc/shared/models';
+import { ConfigService } from '@cdc/shared/config';
 
 @Injectable({
   providedIn: 'root'

@@ -9,10 +9,10 @@ import { SharedModule } from '../../shared/shared.module';
 import { UsersRoutingModule } from './users-routing.module';
 
 import { UsersComponent } from './users.component';
-import { UserFormComponent, UserListComponent, UserInfoComponent } from '@gg/users/components';
-import { CountryService } from '@gg/shared/services';
-import { UsersService } from '@gg/users/services';
-import { StorageService } from '@gg/shared/services';
+import { UserFormComponent, UserListComponent, UserInfoComponent } from '@cdc/users/components';
+import { CountryService } from '@cdc/shared/services';
+import { UsersService } from '@cdc/users/services';
+import { StorageService } from '@cdc/shared/services';
 
 @NgModule({
   declarations: [

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { UsersComponent,  } from './users/users.component';
-import { HomeComponent, NotFoundComponent } from '@gg/shared/components';
+import { HomeComponent, NotFoundComponent } from '@cdc/shared/components';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

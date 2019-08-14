@@ -1,4 +1,4 @@
-import { Country } from '@gg/shared/models';
+import { Country } from '@cdc/shared/models';
 
 export class User {
     id: number;

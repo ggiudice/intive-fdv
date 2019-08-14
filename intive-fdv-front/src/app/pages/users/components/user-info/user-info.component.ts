@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { UsersService } from '@gg/users/services';
-import { LocaleService } from '@gg/shared/services';
-import { LocaleConstants } from '@gg/shared/constants';
-import { User } from '@gg/users/models';
+import { UsersService } from '@cdc/users/services';
+import { LocaleService } from '@cdc/shared/services';
+import { LocaleConstants } from '@cdc/shared/constants';
+import { User } from '@cdc/users/models';
 
 @Component({
   selector: 'app-user-info',

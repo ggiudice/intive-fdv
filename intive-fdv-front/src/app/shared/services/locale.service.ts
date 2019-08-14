@@ -9,8 +9,8 @@ import localeEs from '@angular/common/locales/es';
 import localeEn from '@angular/common/locales/en';
 import localeFr from '@angular/common/locales/fr';
 
-import { ConfigService } from '@gg/shared/config';
-import { Locale } from '@gg/shared/models';
+import { ConfigService } from '@cdc/shared/config';
+import { Locale } from '@cdc/shared/models';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LocaleService } from '@gg/shared/services';
-import { LocaleConstants } from '@gg/shared/constants';
+import { LocaleService } from '@cdc/shared/services';
+import { LocaleConstants } from '@cdc/shared/constants';
 
 @Component({
   selector: 'app-header',

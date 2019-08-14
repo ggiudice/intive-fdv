@@ -9,7 +9,7 @@ import {
 import { startWith, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
-import { CacheService } from '@gg/shared/services';
+import { CacheService } from '@cdc/shared/services';
 
 @Injectable({
   providedIn: 'root'
