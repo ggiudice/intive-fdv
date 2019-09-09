@@ -12,6 +12,9 @@
       "@cdc/users/services": ["./src/app/pages/users/services/index.ts"],
       "@cdc/users/models": ["./src/app/pages/users/models/index.ts"],
     
+      "@cdc/products/components": ["./src/app/pages/products/components/index.ts"],
+      "@cdc/products/services": ["./src/app/pages/products/services/index.ts"],
+      "@cdc/products/models": ["./src/app/pages/products/models/index.ts"],
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

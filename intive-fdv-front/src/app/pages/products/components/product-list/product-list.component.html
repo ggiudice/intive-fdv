@@ -1,0 +1,28 @@
+<div *ngIf="products">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let product of products"
+        [routerLinkActive]="['active']"
+        routerLink="/products/{{product.id}}"
+        class="cursor-pointer">
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary" (click)="clearProducts()">
+        Limpiar
+    </button>
+  </div>
+</div>
