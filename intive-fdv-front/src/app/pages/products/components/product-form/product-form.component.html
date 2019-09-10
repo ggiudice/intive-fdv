@@ -1,43 +1,44 @@
-<app-error [message]="isError && localeService.getText(LOCALE.SERVICE_ERROR_COUNTRIES)"></app-error>
+<app-error *ngIf="isError" [message]="'global.services.countries' | translate"></app-error>
 
 <form [formGroup]="productForm" (submit)="save()" *ngIf="!isError">
 
   <div class="form-row">
     <!-- Name -->
     <div class="form-group col-md-6">
-      <label for="mame" class="control-label">Name</label>
-      <input type="text" class="form-control" formControlName="name"
-        placeholder="Name">
+      <label for="mame" class="control-label">{{ 'products.product-form.form.name.label' | translate }}</label>
+      <input type="text" class="form-control" formControlName="name" placeholder="{{ 'products.product-form.form.name.placeholder' | translate }}">
     
-      <!--div class="text-danger" *ngIf="submitted">
-        <span *ngIf="productForm.controls.name.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_NAME) }}</span>
-        <span *ngIf="productForm.controls.name.errors?.maxlength">{{ localeService.getText(LOCALE.USERS_FORM_MAXLENGTH_NAME) }}</span>
-      </div-->      
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="productForm.controls.name.errors?.required">{{ 'products.product-form.form.name.required' | translate }}</span>
+        <span *ngIf="productForm.controls.name.errors?.maxlength">{{ 'products.product-form.form.name.maxlength' | translate }}</span>
+      </div>      
     </div>
 
     <!-- Description -->
     <div class="form-group col-md-6">
-      <label class="control-label" for="description">Description</label>
-      <input type="text" class="form-control" formControlName="description" placeholder="Description">
+      <label class="control-label" for="description">{{ 'products.product-form.form.description.label' | translate }}</label>
+      <input type="text" class="form-control" formControlName="description" placeholder="{{ 'products.product-form.form.description.placeholder' | translate }}">
     
-      <!--div class="text-danger" *ngIf="submitted">
-        <span *ngIf="productForm.controls.surname.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_SURNAME) }}</span>
-        <span *ngIf="productForm.controls.surname.errors?.maxlength">{{ localeService.getText(LOCALE.USERS_FORM_MAXLENGTH_SURNAME) }}</span>
-      </div-->
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="productForm.controls.description.errors?.required">{{ 'products.product-form.form.description.required' | translate }}</span>
+        <span *ngIf="productForm.controls.description.errors?.maxlength">{{ 'products.product-form.form.description.maxlength' | translate }}</span>
+      </div>
     </div>
 
     <div class="form-group col-md-6">
-      <label class="control-label" for="price">Description</label>
-      <input type="text" class="form-control" formControlName="price" placeholder="Price">
-      <!--div class="text-danger" *ngIf="submitted">
-        <span *ngIf="productForm.controls.surname.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_SURNAME) }}</span>
-        <span *ngIf="productForm.controls.surname.errors?.maxlength">{{ localeService.getText(LOCALE.USERS_FORM_MAXLENGTH_SURNAME) }}</span>
-      </div-->
+      <label class="control-label" for="price">{{ 'products.product-form.form.price.label' | translate }}</label>
+      <input type="text" class="form-control" formControlName="price" placeholder="{{ 'products.product-form.form.price.placeholder' | translate }}">
+      
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="productForm.controls.price.errors?.required">{{ 'products.product-form.form.price.required' | translate }}</span>
+        <span *ngIf="productForm.controls.price.errors?.min">{{ 'products.product-form.form.price.min' | translate }}</span>
+        <span *ngIf="productForm.controls.price.errors?.number">{{ 'products.product-form.form.price.number' | translate }}</span>
+      </div>
     </div>
   </div>
 
   <div class="form-row justify-content-between button-group">
-    <button type="button" class="btn btn-secondary" (click)="clearFormProduct()">Limpiar</button>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary" (click)="clearFormProduct()">{{ 'products.product-form.form.btn-clear' | translate }}</button>
+    <button type="submit" class="btn btn-primary">{{ 'products.product-form.form.btn-save' | translate }}</button>
   </div>
 </form>

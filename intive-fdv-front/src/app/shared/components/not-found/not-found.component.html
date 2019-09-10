@@ -2,10 +2,10 @@
   <div class="error-box">
     <div class="error-body text-center">
       <h1>404</h1>
-      <h3 class="text-uppercase">{{ localeService.getText(LOCALE.NOT_FOUND_TITLE) }}</h3>
-      <p class="text-muted">{{ localeService.getText(LOCALE.NOT_FOUND_SUMMARY) }}</p>
+      <h3 class="text-uppercase">{{ 'notFound.title' | translate }}</h3>
+      <p class="text-muted">{{ 'notFound.summary' | translate }}</p>
       <button type="button" (click)="goBack()" class="btn btn-primary">
-        {{ localeService.getText(LOCALE.NOT_FOUND_BUTTON_RETURN) }}
+        {{ 'notFound.btn-Return' | translate }}
       </button>
     </div>
     <br>

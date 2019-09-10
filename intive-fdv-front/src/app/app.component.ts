@@ -9,16 +9,13 @@ import { LocaleService } from './shared/services/locale.service';
 })
 export class AppComponent {
 
-  readyWeb = false;
+  readyWeb = true;
   fatalError = false;
 
   constructor(
     private localeService: LocaleService
   ) {
     const localeEnviroment = this.localeService.getLocaleId();
-    this.localeService.setLocale(localeEnviroment).subscribe(isReady => {
-      this.readyWeb = isReady;
-      this.fatalError = !isReady;
-    });
+    this.localeService.setLocale(localeEnviroment);
   }
 }

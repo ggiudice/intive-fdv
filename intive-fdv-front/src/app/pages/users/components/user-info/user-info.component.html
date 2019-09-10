@@ -1,4 +1,4 @@
 <div class="alert alert-success" *ngIf="user">
-  {{ localeService.getText(LOCALE.USERS_INFO_USER,
-      [user.name, user.country.name, user.birthdate | localDate: 'fullDate']) }}
+  {{ 'users.user-info.title' |
+  translate:{ name: user.name, countryName: user.country.name, birthdate: user.birthdate | localDate: 'fullDate'} }} 
 </div>

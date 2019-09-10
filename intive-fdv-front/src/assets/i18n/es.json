@@ -1,0 +1,102 @@
+{
+	"global": {
+		"error": "En estos momentos estamos experimentando problemas, por favor intente nuevamente más tarde.",
+		"services": {
+			"countries": "Problemas para recuperar los paises. Intente nuevamente mas tarde."
+		}
+	},
+	"header": {
+		"navbar": {
+			"locale": {
+				"en": "Ingles",
+				"es": "Español",
+				"fr": "Frances",
+				"title": "Idioma"
+			},
+			"products": "Productos",
+			"users": "Usuarios"
+		}
+	},
+	"notFound": {
+		"btn-Return": "Volver",
+		"summary": "La página a la que desea acceder no existe",
+		"title": "¡Página no encontrada!"
+	},
+	"products": {
+		"product-form": {
+			"form": {
+				"btn-clear": "Limpiar",
+				"btn-save": "Guardar",
+				"description": {
+					"label": "Descripción",
+					"maxlength": "Descripción excede los 50 caracteres",
+					"placeholder": "Ingrese descripción",
+					"required": "País es requerido"
+				},
+				"name": {
+					"label": "Nombre",
+					"maxlength": "Nombre excede los 50 caracteres",
+					"placeholder": "Ingrese nombre",
+					"required": "Nombre es requerido"
+				},
+				"price": {
+					"label": "Precio",
+					"min": "Precio solamente montos positivos",
+					"number": "Precio solamente números",
+					"placeholder": "Ingrese precio",
+					"required": "Precio es requerido"
+				}
+			}
+		},
+		"product-list": {
+			"clear": "Limpiar tabla",
+			"table": {
+				"description": "Descripción",
+				"name": "Nombre",
+				"price": "Precio"
+			}
+		}
+	},
+	"users": {
+		"user-form": {
+			"form": {
+				"birthdate": {
+					"label": "Fecha de Nacimiento",
+					"maxDate": "Fecha es nacimiento invalida",
+					"placeholder": "Ingrese Fecha de nacimiento",
+					"required": "Fecha es nacimiento es requerida"
+				},
+				"btn-clear": "Limpiar",
+				"btn-save": "Guardar",
+				"country": {
+					"label": "País",
+					"placeholder": "Ingrese país",
+					"required": "País es requerido"
+				},
+				"name": {
+					"label": "Nombre",
+					"naxlength": "Nombre excede los 50 caracteres",
+					"placeholder": "Ingrese nombre",
+					"required": "Nombre es requerido"
+				},
+				"surname": {
+					"label": "Apellido",
+					"maxlength": "Apellido excede los 50 caracteres",
+					"placeholder": "Ingrese apellido",
+					"required": "Apellido es requerido"
+				}
+			}
+		},
+		"user-info": {
+			"title": "Hola {{ name }} de {{ countryName }} su fecha de nacimiento es {{ birthdate }}"
+		},
+		"user-list": {
+			"clear": "Limpiar tabla",
+			"table": {
+				"birthday": "Fecha de nacimiento",
+				"country": "País",
+				"name": "Nombre"
+			}
+		}
+	}
+}

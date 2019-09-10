@@ -1,0 +1,102 @@
+{
+	"global": {
+		"error": "We are currently experiencing problems, please try again later.",
+		"services": {
+			"countries": "Problems to recover the countries. Try again later."
+		}
+	},
+	"header": {
+		"navbar": {
+			"locale": {
+				"en": "English",
+				"es": "Spanish",
+				"fr": "French",
+				"title": "Language"
+			},
+			"products": "Products",
+			"users": "Users"
+		}
+	},
+	"notFound": {
+		"btn-Return": "Return",
+		"summary": "The page you want to access does not exist",
+		"title": "Page not found!"
+	},
+	"products": {
+		"product-form": {
+			"form": {
+				"btn-clear": "Clear",
+				"btn-save": "Save",
+				"description": {
+					"label": "Description",
+					"maxlength": "Description exceeds 50 characters",
+					"placeholder": "Description here",
+					"required": "Description required"
+				},
+				"name": {
+					"label": "Name",
+					"maxlength": "Name exceeds 50 characters",
+					"placeholder": "Name here",
+					"required": "Name required"
+				},
+				"price": {
+					"label": "Price",
+					"min": "Price are only positive amounts",
+					"number": "Price only number",
+					"placeholder": "Price here",
+					"required": "Price here"
+				}
+			}
+		},
+		"product-list": {
+			"clear": "Clear data",
+			"table": {
+				"description": "Description",
+				"name": "Name",
+				"price": "Price"
+			}
+		}
+	},
+	"users": {
+		"user-form": {
+			"form": {
+				"birthdate": {
+					"label": "Birthdate",
+					"maxDate": "BirthDate invalid",
+					"placeholder": "Birthdate here",
+					"required": "Birthdate required"
+				},
+				"btn-clear": "Clear",
+				"btn-save": "Save",
+				"country": {
+					"label": "Country",
+					"placeholder": "Country here",
+					"required": "Country required"
+				},
+				"name": {
+					"label": "Name",
+					"naxlength": "Name exceeds 50 characters",
+					"placeholder": "Name here",
+					"required": "Name required"
+				},
+				"surname": {
+					"label": "Surname",
+					"maxlength": "Surname exceeds 50 characters",
+					"placeholder": "Surname here",
+					"required": "Surname required"
+				}
+			}
+		},
+		"user-info": {
+			"title": "Hello {{ name }} from {{ countryName }} your birthday is on {{ birthdate }}"
+		},
+		"user-list": {
+			"clear": "Clear data",
+			"table": {
+				"birthday": "Birthday",
+				"country": "Country",
+				"name": "Name"
+			}
+		}
+	}
+}

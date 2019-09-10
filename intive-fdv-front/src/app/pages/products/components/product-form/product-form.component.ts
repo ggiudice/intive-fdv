@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CustomValidators } from 'ngx-custom-validators';
 
-import { LocaleConstants } from '@cdc/shared/constants';
 import { LocaleService } from '@cdc/shared/services';
 import { ProductService } from '@cdc/products/services';
 import { Product } from '@cdc/products/models';
@@ -14,7 +14,6 @@ import { Product } from '@cdc/products/models';
 })
 export class ProductFormComponent implements OnInit {
 
-  LOCALE = LocaleConstants;
   productForm: FormGroup;
   submitted = false;
   idParams: number;
@@ -68,7 +67,7 @@ export class ProductFormComponent implements OnInit {
     const productForm = this.fb.group({
       name: [product && product.name, [Validators.required, Validators.maxLength(50)]],
       description: [product && product.description, [Validators.required, Validators.maxLength(50)]],
-      price: [product && product.price, [Validators.required]]
+      price: [product && product.price, [Validators.required, Validators.min(0), CustomValidators.number]]
     });
 
     return productForm;

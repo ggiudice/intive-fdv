@@ -2,9 +2,9 @@
   <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
+        <th scope="col">{{ 'products.product-list.table.name' | translate }}</th>
+        <th scope="col">{{ 'products.product-list.table.description' | translate }}</th>
+        <th scope="col">{{ 'products.product-list.table.price' | translate }}</th>
       </tr>
     </thead>
     <tbody>
@@ -15,14 +15,14 @@
         class="cursor-pointer">
         <td>{{ product.name }}</td>
         <td>{{ product.description }}</td>
-        <td>{{ product.price | currency }}</td>
+        <td>{{ product.price | localCurrency }}</td>
       </tr>
     </tbody>
   </table>
 
   <div class="d-flex justify-content-end">
     <button type="button" class="btn btn-primary" (click)="clearProducts()">
-        Limpiar
+      {{ 'products.product-list.clear' | translate }}
     </button>
   </div>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LocaleService } from '@cdc/shared/services';
-import { LocaleConstants } from '@cdc/shared/constants';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,6 @@ import { LocaleConstants } from '@cdc/shared/constants';
 })
 export class HeaderComponent implements OnInit {
 
-  LOCALE = LocaleConstants;
   localeId = null;
   localeService: LocaleService;
 
@@ -25,6 +23,6 @@ export class HeaderComponent implements OnInit {
 
   setLocale(localeId: string) {
     this.localeId = localeId;
-    this.localeService.setLocale(localeId).subscribe();
+    this.localeService.setLocale(localeId);
   }
 }

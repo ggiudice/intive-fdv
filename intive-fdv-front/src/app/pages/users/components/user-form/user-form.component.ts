@@ -6,7 +6,6 @@ import { Country } from '@cdc/shared/models';
 import { CountryService } from '@cdc/shared/services';
 import { UsersService } from '@cdc/users/services';
 import { LocaleService } from '@cdc/shared/services';
-import { LocaleConstants } from '@cdc/shared/constants';
 import { User } from '@cdc/users/models';
 
 @Component({
@@ -16,7 +15,6 @@ import { User } from '@cdc/users/models';
 })
 export class UserFormComponent implements OnInit {
 
-  LOCALE = LocaleConstants;
   userForm: FormGroup;
   submitted = false;
   idParams: number;

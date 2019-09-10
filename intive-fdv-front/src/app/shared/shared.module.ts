@@ -8,6 +8,7 @@ import {
   NotFoundComponent,
   ErrorComponent
 } from './components';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     HeaderComponent,

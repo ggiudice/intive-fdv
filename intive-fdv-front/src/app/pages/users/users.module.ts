@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { PipesModule } from '../../shared/pipes/pipes.module';
 import { SharedModule } from '../../shared/shared.module';
@@ -23,6 +24,7 @@ import { StorageService } from '@cdc/shared/services';
   ],
   imports: [
     CommonModule,
+    TranslateModule,
     PipesModule,
     SharedModule,
     UsersRoutingModule,

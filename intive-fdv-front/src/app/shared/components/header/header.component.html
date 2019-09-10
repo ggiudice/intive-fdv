@@ -13,20 +13,22 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" [routerLinkActive]="['active']" >
-        <a class="nav-link" [routerLink]="['/users']">{{ localeService.getText(LOCALE.HEADER_NAV_USERS) }}</a>
-        <a class="nav-link" [routerLink]="['/products']">PRODUCTS</a>
-      </li>        
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/users']">{{ 'header.navbar.users' | translate }}</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/products']">{{ 'header.navbar.products' | translate }}</a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="flag flag-{{localeId}}"></div>{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE) }}
+            <div class="flag flag-{{localeId}}"></div>{{ 'header.navbar.locale.title' | translate }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item cursor-pointer" (click)="setLocale('es')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_ES) }}</a>
-            <a class="dropdown-item cursor-pointer" (click)="setLocale('en')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_EN) }}</a>
-            <a class="dropdown-item cursor-pointer" (click)="setLocale('fr')">{{ localeService.getText(LOCALE.HEADER_NAV_LOCALE_FR) }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="setLocale('es')">{{ 'header.navbar.locale.es' | translate }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="setLocale('en')">{{ 'header.navbar.locale.en' | translate }}</a>
+            <a class="dropdown-item cursor-pointer" (click)="setLocale('fr')">{{ 'header.navbar.locale.fr' | translate }}</a>
           </div>
         </li>    
     </ul>

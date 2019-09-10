@@ -38,9 +38,9 @@ export class ProductService {
       product.id = Math.floor((Math.random() * 10000) + 1);
       productList.push(product);
     } else {
-      for (let userIndex = 0; userIndex < productList.length; userIndex++) {
-        if (productList[userIndex].id === product.id) {
-          productList[userIndex] = product;
+      for (let productIndex = 0; productIndex < productList.length; productIndex++) {
+        if (productList[productIndex].id === product.id) {
+          productList[productIndex] = product;
         }
       }
     }

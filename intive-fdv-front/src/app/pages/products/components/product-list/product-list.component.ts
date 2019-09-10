@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { LocaleConstants } from '@cdc/shared/constants';
 import { LocaleService } from '@cdc/shared/services';
 import { ProductService } from '@cdc/products/services';
 import { Product } from '@cdc/products/models';
@@ -11,10 +10,9 @@ import { Product } from '@cdc/products/models';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
 
   products: Product[];
-  LOCALE = LocaleConstants;
   subscription: Subscription;
   subscriptionLocale: Subscription;
 
@@ -28,12 +26,17 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
 
-  private getProducts(): void {
-    this.productService.getProducts().subscribe(products => this.products = products);
+  ngOnDestroy() {
+    this.subscription && this.subscription.unsubscribe();
+    this.subscriptionLocale && this.subscriptionLocale.unsubscribe();
   }
 
-  private clearProducts(): void {
+  clearProducts(): void {
     this.productService.deleteAllProducts();
+  }
+
+  private getProducts(): void {
+    this.productService.getProducts().subscribe(products => this.products = products);
   }
 
   private addSbscritions() {

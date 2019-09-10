@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LocalDatePipe } from './local-date.pipe';
+import { LocalCurrencyPipe } from './local-currency.pipe';
 
 @NgModule({
   declarations: [
-    LocalDatePipe
+    LocalDatePipe,
+    LocalCurrencyPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    LocalDatePipe
+    LocalDatePipe,
+    LocalCurrencyPipe
   ]
 })
 export class PipesModule { }

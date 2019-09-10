@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 
 import { UsersService } from '@cdc/users/services';
 import { LocaleService } from '@cdc/shared/services';
-import { LocaleConstants } from '@cdc/shared/constants';
 import { User } from '@cdc/users/models';
 
 @Component({
@@ -15,8 +14,6 @@ import { User } from '@cdc/users/models';
 export class UserInfoComponent implements OnInit {
 
   user: User;
-  LOCALE = LocaleConstants;
-  infoLocale: string;
   subscriptionLocale: Subscription;
 
   constructor(

@@ -1,0 +1,102 @@
+{
+	"global": {
+		"error": "Nous rencontrons actuellement des problèmes, veuillez réessayer plus tard.",
+		"services": {
+			"countries": "Problèmes pour récupérer les pays. Réessayez plus tard."
+		}
+	},
+	"header": {
+		"navbar": {
+			"locale": {
+				"en": "Anglais",
+				"es": "Espagnol",
+				"fr": "Français",
+				"title": "Langage"
+			},
+			"products": "Produits",
+			"users": "Utilisateur"
+		}
+	},
+	"notFound": {
+		"btn-Return": "Revenir",
+		"summary": "La page à laquelle vous souhaitez accéder n'existe pas",
+		"title": "Page non trouvée!"
+	},
+	"products": {
+		"product-form": {
+			"form": {
+				"btn-clear": "Effacer",
+				"btn-save": "Sauvegarder",
+				"description": {
+					"label": "Description",
+					"maxlength": "Description dépasse 50 caractères",
+					"placeholder": "Description ici",
+					"required": "Description requis"
+				},
+				"name": {
+					"label": "Nom",
+					"maxlength": "Nom dépasse 50 caractères",
+					"placeholder": "Nom ici",
+					"required": "Nom requis"
+				},
+				"price": {
+					"label": "Prix",
+					"min": "Prix ​​que des montants positifs",
+					"number": "Prix ​​seulement des nombres",
+					"placeholder": "Prix ici",
+					"required": "Prix requis"
+				}
+			}
+		},
+		"product-list": {
+			"clear": "Effacer les données",
+			"table": {
+				"description": "Description",
+				"name": "Nom",
+				"price": "Prix"
+			}
+		}
+	},
+	"users": {
+		"user-form": {
+			"form": {
+				"birthdate": {
+					"label": "Date de naissance",
+					"maxDate": "Date de naissance invalide",
+					"placeholder": "Date de naissance ici",
+					"required": "Date de naissance requise"
+				},
+				"btn-clear": "Effacer",
+				"btn-save": "Sauvegarder",
+				"country": {
+					"label": "Pays",
+					"placeholder": "Pays ici",
+					"required": "Pays requis"
+				},
+				"name": {
+					"label": "Nom",
+					"naxlength": "Le nom dépasse 50 caractères",
+					"placeholder": "Nom ici",
+					"required": "Nom requis"
+				},
+				"surname": {
+					"label": "Nom de famille",
+					"maxlength": "Le nom de famille dépasse 50 caractères",
+					"placeholder": "Nom de famille ici",
+					"required": "Nom de famille requis"
+				}
+			}
+		},
+		"user-info": {
+			"title": "Bonjour {{ name }} de {{ countryName }}, ton anniversaire est {{ birthdate }}"
+		},
+		"user-list": {
+			"clear": "Effacer les données",
+			"table": {
+				"birthday": "Date de naissance",
+				"country": "Pays",
+				"name": "Nom"
+			}
+		}
+	}
+}
