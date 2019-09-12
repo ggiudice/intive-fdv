@@ -13,7 +13,7 @@ import { Product } from '@cdc/products/models';
   styleUrls: ['./product-form.component.scss']
 })
 export class ProductFormComponent implements OnInit {
-  ody       = 2
+  ody     = 2
   productForm: FormGroup;
   submitted = false;
   idParams: number;
