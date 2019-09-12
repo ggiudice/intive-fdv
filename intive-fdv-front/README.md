@@ -33,3 +33,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 En https://github.com/stylelint/stylelint-config-recommended recomienda en:
 * unit-whitelist: [em, rem, s] -> en cambio pusimos % y px por lo que a veces suele usarse, pero tambien se podria configurar que px y % solo se pueda usar en casos especiales..
 * o-empty-source: Por defecto es true, pero como angular crea los archivos por defecto cambiamos a null
+
+## Incorporacion de Husky
+* Comenta que si en un repo hay varios package.json recomienda usar https://github.com/lerna/lerna, ya que al instalar huysky pone unos archiovs en el .git ( https://github.com/typicode/husky )
