@@ -1,3 +1,5 @@
+<app-shopping-form></app-shopping-form>
+
 <div *ngIf="products">
   <table class="table table-hover">
     <thead class="thead-dark">
@@ -16,13 +18,16 @@
         <td>{{ product.name }}</td>
         <td>{{ product.description }}</td>
         <td>{{ product.price | localCurrency }}</td>
+        <a (click)="addShopping(product)">
+          <i class="fa fa-up">Comprar</i>
+        </a>
       </tr>
     </tbody>
   </table>
 
   <div class="d-flex justify-content-end">
     <button type="button" class="btn btn-primary" (click)="clearProducts()">
-      {{ 'products.product-list.clear' | translate }}
+      {{ 'products.product-list.btn-clear' | translate }}
     </button>
   </div>
 </div>

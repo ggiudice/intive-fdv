@@ -39,7 +39,7 @@ export class UserFormComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       this.idParams = +paramMap.get('id');
-      this.userForm = this.createForm(this.idParams);
+      this.userForm = this.buildForm(this.idParams);
     });
     this.getCountries();
   }
@@ -64,7 +64,7 @@ export class UserFormComponent implements OnInit {
     this.userForm.reset();
   }
 
-  private createForm(id: number): FormGroup {
+  private buildForm(id: number): FormGroup {
 
     let user = new User();
     if (id !== 0 && isNaN(id) === false) {

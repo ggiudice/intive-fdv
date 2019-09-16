@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 
-
 import { StorageService } from '@cdc/shared/services';
 import { Constants } from '@cdc/shared/constants';
 import { Product } from '@cdc/products/models';
+import { isNullOrUndefined } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -19,35 +19,41 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
     const productsStorage = this.storageService.getItem(Constants.STORAGE_PRODUCTS);
-    const products: Product[] = productsStorage ? JSON.parse(productsStorage) : [];
+    const productsAny: [] = productsStorage ? JSON.parse(productsStorage) : [];
+
+    const products: Product[] = productsAny.map(productAny => new Product().getProductByAny(productAny));
     return of(products);
   }
 
   getProduct(id: number): Observable<Product> {
     const productsStorage = this.storageService.getItem(Constants.STORAGE_PRODUCTS);
-    const products: Product[] = productsStorage ? JSON.parse(productsStorage) : [];
+    const productsAny: [] = productsStorage ? JSON.parse(productsStorage) : [];
+    const products: Product[] = productsAny.map(productAny => new Product().getProductByAny(productAny));
+
     const product = products.find(productSearch => productSearch.id === Number(id));
     return of(product);
   }
 
   public saveProduct(product: Product): void {
     const productsStorage = this.storageService.getItem(Constants.STORAGE_PRODUCTS);
-    const productList: Product[] = productsStorage ? JSON.parse(productsStorage) : [];
+    const productsAny: [] = productsStorage ? JSON.parse(productsStorage) : [];
+    const products: Product[] = productsAny.map(productAny => new Product().getProductByAny(productAny));
 
-    if (product.id === undefined || product.id === null) {
+    if (isNullOrUndefined(product.id)) {
       product.id = Math.floor((Math.random() * 10000) + 1);
-      productList.push(product);
+      products.push(product);
     } else {
-      for (let productIndex = 0; productIndex < productList.length; productIndex++) {
-        if (productList[productIndex].id === product.id) {
-          productList[productIndex] = product;
+      // TODO merjorar esto en user, prouct
+      for (let productIndex = 0; productIndex < products.length; productIndex++) {
+        if (products[productIndex].id === product.id) {
+          products[productIndex] = product;
         }
       }
     }
 
-    const productsString = JSON.stringify(productList);
+    const productsString = JSON.stringify(products);
     this.storageService.setItem(Constants.STORAGE_PRODUCTS, productsString);
-    this.productListChanged.next(productList);
+    this.productListChanged.next(products);
   }
 
   public deleteAllProducts(): void {

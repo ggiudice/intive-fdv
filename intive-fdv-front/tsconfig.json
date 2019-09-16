@@ -12,6 +12,10 @@
       "@cdc/users/components": ["./src/app/pages/users/components/index.ts"],
       "@cdc/users/services": ["./src/app/pages/users/services/index.ts"],
       "@cdc/users/models": ["./src/app/pages/users/models/index.ts"],
+
+      "@cdc/shopping/components": ["./src/app/pages/shopping/components/index.ts"],
+      "@cdc/shopping/services": ["./src/app/pages/shopping/services/index.ts"],
+      "@cdc/shopping/models": ["./src/app/pages/shopping/models/index.ts"],
     
       "@cdc/products/components": ["./src/app/pages/products/components/index.ts"],
       "@cdc/products/services": ["./src/app/pages/products/services/index.ts"],

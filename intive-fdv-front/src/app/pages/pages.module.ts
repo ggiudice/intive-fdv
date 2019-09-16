@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { ProductModule } from './products/product.module';
+import { ShoppingModule } from './shopping/shopping.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductModule } from './products/product.module';
     PagesRoutingModule,
     UsersModule,
     SharedModule,
-    ProductModule
+    ProductModule,
+    ShoppingModule
   ]
 })
 export class PagesModule { }

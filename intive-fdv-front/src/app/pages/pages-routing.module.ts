@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { UsersComponent,  } from './users/users.component';
 import { HomeComponent, NotFoundComponent } from '@cdc/shared/components';
 import { ProductComponent } from './products/product.component';
+import { ShoppingListComponent } from './shopping/components';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
       { path: 'users', component: UsersComponent },
       { path: 'users/:id', component: UsersComponent },
       { path: 'products', component: ProductComponent },
-      { path: 'products/:id', component: ProductComponent }
+      { path: 'products/:id', component: ProductComponent },
+      { path: 'shopping', component: ShoppingListComponent }
     ]
   },
   { path: '**', component: NotFoundComponent }

@@ -32,7 +32,7 @@ export class ProductFormComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       this.idParams = +paramMap.get('id');
-      this.productForm = this.createForm(this.idParams);
+      this.productForm = this.buildForm(this.idParams);
     });
   }
 
@@ -56,7 +56,7 @@ export class ProductFormComponent implements OnInit {
     this.productForm.reset();
   }
 
-  private createForm(id: number): FormGroup {
+  private buildForm(id: number): FormGroup {
 
     let product = new Product();
     if (id !== 0 && isNaN(id) === false) {

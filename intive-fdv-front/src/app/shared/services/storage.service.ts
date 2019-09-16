@@ -13,7 +13,8 @@ export const BROWSER_STORAGE = new InjectionToken<Storage>('Browser Storage', {
 export class StorageService {
 
   constructor(@Inject(BROWSER_STORAGE) public storage: Storage) {}
-
+// TODO: Ver algo mas generico por model
+// https://stackoverflow.com/questions/43695983/typescript-using-generics-to-for-localstorage
   getItem(key: string) {
     return this.storage.getItem(key);
   }

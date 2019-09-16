@@ -1,0 +1,55 @@
+<app-shopping-form></app-shopping-form>
+
+<div *ngIf="shopping">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">{{ 'shopping.shopping-list.table.quantity' | translate }}</th>
+        <th scope="col">{{ 'shopping.shopping-list.table.name' | translate }}</th>
+        <th scope="col">{{ 'shopping.shopping-list.table.price' | translate }}</th>
+        <th scope="col">{{ 'shopping.shopping-list.table.total' | translate }}</th>
+        <th scope="col">{{ 'shopping.shopping-list.table.actions' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let detail of shopping.details"
+        class="cursor-pointer">
+        <td>{{ detail.quantity | number}}</td>
+        <td>{{ detail.product.name }}</td>
+        <td>{{ detail.product.price }}</td>
+        <td>{{ detail.total }}</td>
+        <td>
+          <!-- TODO agregar fonsadneows -->
+          <a (click)="showDetail(detail)">
+            <i class="fa fa-up">Modificar</i>
+          </a>
+          <a (click)="deleteDetail(detail.id)">
+              <i class="fa fa-up">Borrar</i>
+            </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div>
+    <div>
+      <span>{{ 'shopping.shopping-list.costs.subtotal' | translate }}</span>
+      <span>{{ shopping.subtotal | currency}}</span>
+    </div>
+    <div>
+      <span>{{ 'shopping.shopping-list.costs.subtotalIva' | translate }}</span>
+      <span>{{ shopping.subtotalIva | currency}}</span>
+    </div>
+    <div>
+      <span>{{ 'shopping.shopping-list.costs.total' | translate }}</span>
+      <span>{{ shopping.total | currency}}</span>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary" (click)="clearShopping()">
+      {{ 'shopping.shopping-list.btn-clear' | translate }}
+    </button>
+  </div>
+</div>

@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { LocaleService } from '@cdc/shared/services';
 import { ProductService } from '@cdc/products/services';
 import { Product } from '@cdc/products/models';
+import { ModalService as ModalShoppingService } from '@cdc/shopping/services';
+
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +20,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(
     private localeService: LocaleService,
-    private productService: ProductService
+    private productService: ProductService,
+    private modalShoppingService: ModalShoppingService
   ) { }
 
   ngOnInit() {
@@ -33,6 +36,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   clearProducts(): void {
     this.productService.deleteAllProducts();
+  }
+
+  addShopping(product: Product): void {
+    this.modalShoppingService.showDetailOrProduct(product);
   }
 
   private getProducts(): void {

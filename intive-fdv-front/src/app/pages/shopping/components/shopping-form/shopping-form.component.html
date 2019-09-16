@@ -1,0 +1,45 @@
+<p>shopping-form works!</p>
+
+
+<ng-template #modal>
+  <div class="modal-header" >
+    <h4 class="modal-title pull-left">{{ 'shopping.shopping-form.form.title' | translate }}</h4>
+    <button type="button" class="close pull-right" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="shoppingForm" (submit)="save()">
+    <div class="modal-body">
+      <div>
+        <span>XXXX producto   </span>
+        <span>{{ detail.product.name}}</span>
+      </div>
+
+      <div>
+          <span>XXXX descr   </span>
+          <span>{{ detail.product.description}}</span>
+        </div>
+      <div>
+        <span>XXXX precio   </span>
+        <span>{{ detail.product.price}}</span>
+      </div>
+      <!-- Quantity -->
+      <div class="form-group col-md-6">
+        <label for="quantity" class="control-label">{{ 'shopping.shopping-form.form.quantity.label' | translate }}</label>
+        <input type="number" class="form-control" formControlName="quantity" min="1"
+          placeholder="{{ 'shopping.shopping-form.form.quantity.placeholder' | translate }}">
+        
+        <div class="text-danger" *ngIf="submitted">
+          <span *ngIf="shoppingForm.controls.quantity.errors?.required">{{ 'shopping.shopping-form.form.quantity.required' | translate }}</span>
+          <span *ngIf="shoppingForm.controls.quantity.errors?.max">{{ 'shopping.shopping-form.form.quantity.max' | translate }}</span>
+        </div>      
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="form-row justify-content-between button-group">
+        <button type="button" class="btn btn-secondary" (click)="close()">{{ 'shopping.shopping-form.form.btn-cancel' | translate }}</button>
+        <button type="submit" class="btn btn-primary">{{ 'shopping.shopping-form.form.btn-save' | translate }}</button>
+      </div>
+    </div>
+  </form>
+</ng-template>

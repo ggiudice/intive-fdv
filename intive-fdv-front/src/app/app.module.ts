@@ -30,7 +30,6 @@ defineLocale('fr', frLocale);
     BrowserModule,
     HttpClientModule,
     PagesModule,
-
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
