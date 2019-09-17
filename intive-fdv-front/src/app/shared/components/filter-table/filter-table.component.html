@@ -1,0 +1,70 @@
+<form [formGroup]="form" (submit)="submitTypeSubmit()">
+  
+  <div class="form-group" *ngIf="type === 'datePicker'">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="{{placeholder}}"
+      formControlName="input"
+      bsDatepicker
+      (bsValueChange)="submitTypeDateChange($event)">
+  </div>
+
+  <div class="form-group" *ngIf="type === 'number' || type === 'text' || type === 'date'">
+    <input
+      class="form-control"
+      type="{{type}}"
+      (submit)="submitTypeSubmit()"
+      placeholder="{{placeholder}}"
+      formControlName="input"
+      (ngModelChange)="submitTypeChange()">
+  </div> <!-- (blur)="submitTypeSubmit()" -->
+  
+  <div class="form-group" *ngIf="type === 'list'">
+    <select
+      class="form-control"
+      formControlName="input"
+      (change)="submitTypeChange()">
+      <option [ngValue]="null">{{placeholder}}</option>
+      <option *ngFor="let item of listItems" [value]="item.id">{{item.name}}</option>
+    </select>
+  </div>
+</form>
+
+
+<!-- Ejemplo de uso en la tabla producto -->
+<!-- thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        <span>{{ 'products.product-list.table.name' | translate }}</span>
+        <app-filter-table
+          filterName="name"
+          placeholder="Seleccione..."
+          type="list"
+          [listItems]="products"
+          (getDataPutting)="setChange($event)">
+        </app-filter-table>
+      </th>
+      <th scope="col">
+        <span>{{ 'products.product-list.table.description' | translate }}</span>
+        <app-filter-table
+          filterName="description"
+          placeholder="Descripcion"
+          type="text"
+          typeSubmit="submit"
+          (getDataPutting)="setChange($event)">
+        </app-filter-table>
+      </th>
+      <th scope="col">
+        <span>{{ 'products.product-list.table.price' | translate }}</span>
+        <app-filter-table
+          filterName="price"
+          placeholder="Precio"
+          type="text"
+          typeAttribute="number"
+          typeSubmit="submit"
+          (getDataPutting)="setChange($event)">
+        </app-filter-table>
+      </th>
+    </tr>
+  </thead-->
