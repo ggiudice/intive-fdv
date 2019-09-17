@@ -7,6 +7,7 @@ import { ModalModule as ModalModuleBootstrap } from 'ngx-bootstrap/modal';
 import { ShoppingRoutingModule } from './shopping-routing.module';
 import { ShoppingComponent } from './shopping.component';
 import { ShoppingFormComponent, ShoppingListComponent } from '@cdc/shopping/components';
+import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 
 @NgModule({
   declarations: [ShoppingComponent, ShoppingFormComponent, ShoppingListComponent],
@@ -15,6 +16,7 @@ import { ShoppingFormComponent, ShoppingListComponent } from '@cdc/shopping/comp
     ReactiveFormsModule,
     TranslateModule,
     ShoppingRoutingModule,
+    PipesModule,
     ModalModuleBootstrap.forRoot()
   ],
   exports: [

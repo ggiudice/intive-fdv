@@ -1,6 +1,3 @@
-<p>shopping-form works!</p>
-
-
 <ng-template #modal>
   <div class="modal-header" >
     <h4 class="modal-title pull-left">{{ 'shopping.shopping-form.form.title' | translate }}</h4>
@@ -31,7 +28,7 @@
         
         <div class="text-danger" *ngIf="submitted">
           <span *ngIf="shoppingForm.controls.quantity.errors?.required">{{ 'shopping.shopping-form.form.quantity.required' | translate }}</span>
-          <span *ngIf="shoppingForm.controls.quantity.errors?.max">{{ 'shopping.shopping-form.form.quantity.max' | translate }}</span>
+          <span *ngIf="shoppingForm.controls.quantity.errors?.min">{{ 'shopping.shopping-form.form.quantity.min' | translate }}</span>
         </div>      
       </div>
     </div>

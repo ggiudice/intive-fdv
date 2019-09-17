@@ -1,6 +1,5 @@
 {
 	"global": {
-		"error": "We are currently experiencing problems, please try again later.",
 		"services": {
 			"countries": "Problems to recover the countries. Try again later."
 		}
@@ -14,6 +13,7 @@
 				"title": "Language"
 			},
 			"products": "Products",
+			"shopping": "Shopping",
 			"users": "Users"
 		}
 	},
@@ -25,7 +25,7 @@
 	"products": {
 		"product-form": {
 			"form": {
-				"btn-clear": "Clear",
+				"btn-clear": "Clean",
 				"btn-save": "Save",
 				"description": {
 					"label": "Description",
@@ -49,11 +49,41 @@
 			}
 		},
 		"product-list": {
-			"clear": "Clear data",
+			"btn-clear": "Clean",
 			"table": {
 				"description": "Description",
 				"name": "Name",
 				"price": "Price"
+			}
+		}
+	},
+	"shopping": {
+		"shopping-form": {
+			"form": {
+				"btn-cancel": "Cancel",
+				"btn-save": "Save",
+				"quantity": {
+					"label": "Quantity",
+					"min": "Quantity are only positive",
+					"placeholder": "Quantity here",
+					"required": "Quantity is requerid"
+				},
+				"title": "Shopping"
+			}
+		},
+		"shopping-list": {
+			"btn-clear": "Clean",
+			"costs": {
+				"subtotal": "Subtotal",
+				"subtotalIva": "Subtotal plus iva",
+				"total": "Total"
+			},
+			"table": {
+				"actions": "Actions",
+				"name": "Name",
+				"price": "Price",
+				"quantity": "Quantity",
+				"total": "Total"
 			}
 		}
 	},
@@ -66,7 +96,7 @@
 					"placeholder": "Birthdate here",
 					"required": "Birthdate required"
 				},
-				"btn-clear": "Clear",
+				"btn-clear": "Clean",
 				"btn-save": "Save",
 				"country": {
 					"label": "Country",
@@ -91,7 +121,7 @@
 			"title": "Hello {{ name }} from {{ countryName }} your birthday is on {{ birthdate }}"
 		},
 		"user-list": {
-			"clear": "Clear data",
+			"btn-clear": "Clean",
 			"table": {
 				"birthday": "Birthday",
 				"country": "Country",

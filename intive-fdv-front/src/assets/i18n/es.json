@@ -1,6 +1,5 @@
 {
 	"global": {
-		"error": "En estos momentos estamos experimentando problemas, por favor intente nuevamente más tarde.",
 		"services": {
 			"countries": "Problemas para recuperar los paises. Intente nuevamente mas tarde."
 		}
@@ -14,6 +13,7 @@
 				"title": "Idioma"
 			},
 			"products": "Productos",
+			"shopping": "Shopping",
 			"users": "Usuarios"
 		}
 	},
@@ -49,11 +49,41 @@
 			}
 		},
 		"product-list": {
-			"clear": "Limpiar tabla",
+			"btn-clear": "Limpiar",
 			"table": {
 				"description": "Descripción",
 				"name": "Nombre",
 				"price": "Precio"
+			}
+		}
+	},
+	"shopping": {
+		"shopping-form": {
+			"form": {
+				"btn-cancel": "Cancelar",
+				"btn-save": "Guardar",
+				"quantity": {
+					"label": "Cantidad",
+					"min": "Cantidad solamente positivos",
+					"placeholder": "Ingrese cantidad",
+					"required": "Cantidad es requerida"
+				},
+				"title": "Shopping"
+			}
+		},
+		"shopping-list": {
+			"btn-clear": "Limpiar",
+			"costs": {
+				"subtotal": "Subtotal",
+				"subtotalIva": "Subtotal con iva",
+				"total": "Total"
+			},
+			"table": {
+				"actions": "Acciones",
+				"name": "Nombre",
+				"price": "Precio",
+				"quantity": "Cantidad",
+				"total": "Total"
 			}
 		}
 	},
@@ -91,7 +121,7 @@
 			"title": "Hola {{ name }} de {{ countryName }} su fecha de nacimiento es {{ birthdate }}"
 		},
 		"user-list": {
-			"clear": "Limpiar tabla",
+			"btn-clear": "Limpiar",
 			"table": {
 				"birthday": "Fecha de nacimiento",
 				"country": "País",

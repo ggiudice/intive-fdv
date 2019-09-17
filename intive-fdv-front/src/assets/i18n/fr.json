@@ -1,6 +1,5 @@
 {
 	"global": {
-		"error": "Nous rencontrons actuellement des problèmes, veuillez réessayer plus tard.",
 		"services": {
 			"countries": "Problèmes pour récupérer les pays. Réessayez plus tard."
 		}
@@ -14,6 +13,7 @@
 				"title": "Langage"
 			},
 			"products": "Produits",
+			"shopping": "Achats",
 			"users": "Utilisateur"
 		}
 	},
@@ -49,11 +49,41 @@
 			}
 		},
 		"product-list": {
-			"clear": "Effacer les données",
+			"btn-clear": "Effacer",
 			"table": {
 				"description": "Description",
 				"name": "Nom",
 				"price": "Prix"
+			}
+		}
+	},
+	"shopping": {
+		"shopping-form": {
+			"form": {
+				"btn-cancel": "Annuler",
+				"btn-save": "Sauvegarder",
+				"quantity": {
+					"label": "Quantité",
+					"min": "Quantité ​​que des positifs",
+					"placeholder": "Quantité ici",
+					"required": "Quantité requis"
+				},
+				"title": "Achats"
+			}
+		},
+		"shopping-list": {
+			"btn-clear": "Effacer",
+			"costs": {
+				"subtotal": "Sous-total",
+				"subtotalIva": "Sous-total plus iva",
+				"total": "Total"
+			},
+			"table": {
+				"actions": "Actions",
+				"name": "Nom",
+				"price": "Prix",
+				"quantity": "Quantité",
+				"total": "Total"
 			}
 		}
 	},
@@ -91,7 +121,7 @@
 			"title": "Bonjour {{ name }} de {{ countryName }}, ton anniversaire est {{ birthdate }}"
 		},
 		"user-list": {
-			"clear": "Effacer les données",
+			"btn-clear": "Effacer",
 			"table": {
 				"birthday": "Date de naissance",
 				"country": "Pays",

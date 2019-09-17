@@ -18,7 +18,7 @@
         <td>{{ detail.quantity | number}}</td>
         <td>{{ detail.product.name }}</td>
         <td>{{ detail.product.price }}</td>
-        <td>{{ detail.total }}</td>
+        <td>{{ detail.total | localCurrency}}</td>
         <td>
           <!-- TODO agregar fonsadneows -->
           <a (click)="showDetail(detail)">
@@ -35,15 +35,15 @@
   <div>
     <div>
       <span>{{ 'shopping.shopping-list.costs.subtotal' | translate }}</span>
-      <span>{{ shopping.subtotal | currency}}</span>
+      <span>{{ shopping.subtotal | localCurrency}}</span>
     </div>
     <div>
       <span>{{ 'shopping.shopping-list.costs.subtotalIva' | translate }}</span>
-      <span>{{ shopping.subtotalIva | currency}}</span>
+      <span>{{ shopping.subtotalIva | localCurrency}}</span>
     </div>
     <div>
       <span>{{ 'shopping.shopping-list.costs.total' | translate }}</span>
-      <span>{{ shopping.total | currency}}</span>
+      <span>{{ shopping.total | localCurrency}}</span>
     </div>
   </div>
 

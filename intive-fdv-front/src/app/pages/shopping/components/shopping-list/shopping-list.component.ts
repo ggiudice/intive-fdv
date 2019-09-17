@@ -3,6 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { Shopping, Detail } from '@cdc/shopping/models';
 import { ShoppingService, ModalService } from '@cdc/shopping/services';
 
+// TODO
+/*
+- Faltan algunos labels para internalizar
+- Falta poner fontawesone
+- Armar mejor el estilado del listado en la parte de totales
+- falta armar mejor el estilado e internalizar en la parte de formulario de comprar
+
+*/
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
