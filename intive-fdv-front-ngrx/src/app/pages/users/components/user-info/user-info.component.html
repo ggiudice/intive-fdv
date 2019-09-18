@@ -1,0 +1,4 @@
+<div class="alert alert-success" *ngIf="user">
+  {{ localeService.getText(LOCALE.USERS_INFO_USER,
+      [user.name, user.country.name, user.birthdate | localDate: 'fullDate']) }}
+</div>

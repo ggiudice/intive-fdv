@@ -1,0 +1,28 @@
+<div *ngIf="users">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">{{ localeService.getText(LOCALE.USERS_TABLE_HEADER_NAME) }}</th>
+        <th scope="col">{{ localeService.getText(LOCALE.USERS_TABLE_HEADER_COUNTRY) }}</th>
+        <th scope="col">{{ localeService.getText(LOCALE.USERS_TABLE_HEADER_BIRTHDAY) }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let user of users"
+        [routerLinkActive]="['active']"
+        routerLink="/users/{{user.id}}"
+        class="cursor-pointer">
+        <td>{{ user.name }} {{ user.surname }}</td>
+        <td>{{ user.country.name }}</td>
+        <td>{{ user.birthdate | localDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary" (click)="clearUsers()">
+        {{ localeService.getText(LOCALE.USERS_TABLE_CLEAR) }}
+    </button>
+  </div>
+</div>

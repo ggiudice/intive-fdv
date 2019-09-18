@@ -1,0 +1,126 @@
+[
+    {
+        "key": "USERS_FORM_LABEL_NAME",
+        "value": "Nombre"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_NAME",
+        "value": "Ingrese nombre"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_NAME",
+        "value": "Nombre es requerido"
+    },
+    {
+        "key": "USERS_FORM_MAXLENGTH_NAME",
+        "value": "Nombre excede los 50 caracteres"
+    },
+    {
+        "key": "USERS_FORM_LABEL_SURNAME",
+        "value": "Apellido"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_SURNAME",
+        "value": "Ingrese apellido"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_SURNAME",
+        "value": "Apellido es requerido"
+    },
+    {
+        "key": "USERS_FORM_MAXLENGTH_SURNAME",
+        "value": "Apellido excede los 50 caracteres"
+    },
+    {
+        "key": "USERS_FORM_LABEL_COUNTRY",
+        "value": "País"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_COUNTRY",
+        "value": "Ingrese país"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_COUNTRY",
+        "value": "País es requerido"
+    },
+    {
+        "key": "USERS_FORM_LABEL_BIRTHDATE",
+        "value": "Fecha de Nacimiento"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_BIRTHDATE",
+        "value": "Ingrese Fecha de nacimiento"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_BIRTHDATE",
+        "value": "Fecha es nacimiento es requerida"
+    },
+    {
+        "key": "USERS_FORM_MAXDATE_BIRTHDATE",
+        "value": "Fecha es nacimiento invalida"
+    },
+    {
+        "key": "USERS_FORM_BUTTON_CLEAR",
+        "value": "Limpiar"
+    },
+    {
+        "key": "USERS_FORM_BUTTON_SAVE",
+        "value": "Guardar"
+    },
+    {
+        "key": "USERS_TABLE_HEADER_NAME",
+        "value": "Nombre"
+    },
+    {
+        "key": "USERS_TABLE_HEADER_COUNTRY",
+        "value": "País"
+    },
+    {
+        "key": "USERS_TABLE_HEADER_BIRTHDAY",
+        "value": "Fecha de nacimiento"
+    },
+    {
+        "key": "USERS_TABLE_CLEAR",
+        "value": "Limpiar tabla"
+    },
+    {
+        "key": "USERS_INFO_USER",
+        "value": "Hola $0 de $1 su fecha de nacimiento es $2"
+    },
+    {
+        "key": "HEADER_NAV_USERS",
+        "value": "Usuarios"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE",
+        "value": "Idioma"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE_ES",
+        "value": "Español"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE_EN",
+        "value": "Ingles"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE_FR",
+        "value": "Frances"
+    },
+    {
+        "key": "NOT_FOUND_TITLE",
+        "value": "¡Página no encontrada!"
+    },
+    {
+        "key": "NOT_FOUND_SUMMARY",
+        "value": "La página a la que desea acceder no existe"
+    },
+    {
+        "key": "NOT_FOUND_BUTTON_RETURN",
+        "value": "Volver"
+    },
+    {
+        "key": "SERVICE_ERROR_COUNTRIES",
+        "value": "Problemas para recuperar los paises. Intente nuevamente mas tarde."
+    }
+]

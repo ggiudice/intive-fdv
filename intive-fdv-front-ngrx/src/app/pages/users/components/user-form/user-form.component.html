@@ -1,0 +1,70 @@
+<app-error [message]="isError && localeService.getText(LOCALE.SERVICE_ERROR_COUNTRIES)"></app-error>
+
+<form [formGroup]="userForm" (submit)="save()" *ngIf="!isError">
+
+  <div class="form-row">
+    <!-- Name -->
+    <div class="form-group col-md-6">
+      <label for="mame" class="control-label">{{ localeService.getText(LOCALE.USERS_FORM_LABEL_NAME) }}</label>
+      <input type="text" class="form-control" formControlName="name"
+        placeholder="{{ localeService.getText(LOCALE.USERS_FORM_PLACEHOLDER_NAME) }}">
+    
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="userForm.controls.name.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_NAME) }}</span>
+        <span *ngIf="userForm.controls.name.errors?.maxlength">{{ localeService.getText(LOCALE.USERS_FORM_MAXLENGTH_NAME) }}</span>
+      </div>      
+    </div>
+
+    <!-- Surname -->
+    <div class="form-group col-md-6">
+      <label class="control-label" for="surname">{{ localeService.getText(LOCALE.USERS_FORM_LABEL_SURNAME) }}</label>
+      <input type="text" class="form-control" formControlName="surname" placeholder="{{ localeService.getText(LOCALE.USERS_FORM_PLACEHOLDER_SURNAME) }}">
+    
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="userForm.controls.surname.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_SURNAME) }}</span>
+        <span *ngIf="userForm.controls.surname.errors?.maxlength">{{ localeService.getText(LOCALE.USERS_FORM_MAXLENGTH_SURNAME) }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <!-- Country -->
+    <div class="form-group col-md-6">
+      <label class="control-label" for="country">{{ localeService.getText(LOCALE.USERS_FORM_LABEL_COUNTRY) }}</label>
+
+      <ng-select
+        placeholder="{{ localeService.getText(LOCALE.USERS_FORM_PLACEHOLDER_COUNTRY) }}"
+        formControlName="country"
+        [items]="config.countries"
+        bindLabel="name"
+        bindValue="alpha2Code">
+      </ng-select>
+
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="userForm.controls.country.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_COUNTRY) }}</span>
+      </div>
+    </div>
+
+    <!-- BirthDate -->
+    <div class="form-group col-md-6">
+      <label for="birthdate" class="control-label">{{ localeService.getText(LOCALE.USERS_FORM_LABEL_BIRTHDATE) }}</label>
+      <input 
+        type="text"
+        placeholder="{{ localeService.getText(LOCALE.USERS_FORM_PLACEHOLDER_BIRTHDATE) }}"
+        class="form-control"
+        [maxDate]="config.maxDate"
+        bsDatepicker
+        formControlName="birthdate">
+      
+      <div class="text-danger" *ngIf="submitted">
+        <span *ngIf="userForm.controls.birthdate.errors?.required">{{ localeService.getText(LOCALE.USERS_FORM_REQUIRED_BIRTHDATE) }}</span>
+        <span *ngIf="userForm.controls.birthdate.errors?.bsDate?.maxDate">{{ localeService.getText(LOCALE.USERS_FORM_MAXDATE_BIRTHDATE) }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row justify-content-between button-group">
+    <button type="button" class="btn btn-secondary" (click)="clearFormUser()">{{ localeService.getText(LOCALE.USERS_FORM_BUTTON_CLEAR) }}</button>
+    <button type="submit" class="btn btn-primary">{{ localeService.getText(LOCALE.USERS_FORM_BUTTON_SAVE) }}</button>
+  </div>
+</form>

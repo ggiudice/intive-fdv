@@ -1,0 +1,17 @@
+@media (max-width: 576px) {
+
+  .container-custom {
+    padding-top: 0px;
+    padding-right: 15px!important;
+    padding-left: 15px!important;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: .5rem!important;
+  }
+
+  .button-group {
+    flex-direction: column-reverse;
+  }
+}

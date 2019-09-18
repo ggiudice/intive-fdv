@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "@cdc/shared/components": ["./src/app/shared/components/index.ts"],
+      "@cdc/shared/services": ["./src/app/shared/services/index.ts"],
+      "@cdc/shared/models": ["./src/app/shared/models/index.ts"],
+      "@cdc/shared/constants": ["./src/app/shared/constants/index.ts"],
+      "@cdc/shared/config": ["./src/app/shared/config/index.ts"],
+
+      "@cdc/users/components": ["./src/app/pages/users/components/index.ts"],
+      "@cdc/users/services": ["./src/app/pages/users/services/index.ts"],
+      "@cdc/users/models": ["./src/app/pages/users/models/index.ts"],
+    
+    },
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  }
+}
