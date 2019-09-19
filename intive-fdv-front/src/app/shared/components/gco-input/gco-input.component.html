@@ -1,0 +1,49 @@
+<label class="control-label">{{ data.label }}</label>
+
+<input
+    class="form-control"
+    [type]="data.type"
+    [placeholder]="data.placeholder"
+
+    [value]="value"
+    [disabled]="isDisabled"
+    
+    (input)="onInput($event.target.value)">
+
+<ng-content></ng-content>
+
+<!-- Ejemplo de uso en la formulario producto -->
+<!--div class="form-row">
+    <div class="form-group col-md-6" *ngFor="let form of formsAdittionals">
+        <app-gco-input
+        [data]="form"
+        formControlName="{{form.name}}">
+        </app-gco-input>
+
+        <div class="text-danger" *ngIf="submitted">
+        <div *ngFor="let custom of form.validators">
+            <span *ngIf="productForm.controls[form.name].hasError(custom.code)">{{ custom.title }}</span>
+        </div>
+        </div>
+    </div>
+</div-->
+
+<!-- Ejemplo de uso en el componente.ts -->
+<!--
+addControlAditionals() {
+    this.productService.getJsonMOCK().subscribe(formsCustom => {
+      formsCustom.forEach(form => this.productForm.addControl(form.name, this.fb.control(null, GcoHelper.getValidatorsForJson(form.validators))));
+      // TODo esto se haria mas elegante
+      this.formsAdittionals = formsCustom;
+    })
+}
+-->
+
+<!-- Ejemplo de uso en el service.ts-->
+<!-- 
+    getJsonMOCK(): Observable<CustomForm[]> {
+        return this.http.get<CustomForm[]>('../../assets/mocks/formcustom.json').pipe(map(formsCustom => {
+          return formsCustom.filter(form => form.isActivate === true);
+        }));
+      }
+-->

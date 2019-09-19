@@ -1,0 +1,85 @@
+[
+    {
+      "name": "direccion",
+      "isActivate": false,
+      "type": "text",
+      "label": "Direccion",
+      "placeholder": "Ingrese direccion",
+      "validators": [
+        {
+          "code": "required",
+          "param": null,
+          "title": "Direccion es requerida"
+        },
+        {
+          "code": "maxLength",
+          "param": 30,
+          "title": "Longitud maxima es 30 caracteres"
+        }
+      ]
+    },
+    {
+      "name": "localidad",
+      "isActivate": true,
+      "type": "text",
+      "label": "Localidad",
+      "placeholder": "Ingrese localidad",
+      "validators": [
+        {
+          "code": "required",
+          "param": null,
+          "title": "Localidad es requerida"
+        }
+      ]
+    },
+    {
+      "name": "nro",
+      "isActivate": true,
+      "type": "number",
+      "label": "Numero",
+      "placeholder": "Ingrese número dirección",
+      "validators": [
+        {
+          "code": "required",
+          "param": null,
+          "title": "Número es requerido"
+        },
+        {
+          "code": "max",
+          "param": 10000,
+          "title": "Máximo es 10000"
+        }
+      ]
+    },
+    {
+        "name": "nacimiento",
+        "isActivate": true,
+        "type": "date",
+        "label": "Fecha de nacimiento",
+        "placeholder": "Ingrese fecha de nacimiento",
+        "validators": [{
+            "code": "required",
+            "param": null,
+            "title": "Fecha de nacimiento es requerida"
+        }]
+    },
+    {
+      "name": "edad",
+      "isActivate": true,
+      "type": "number",
+      "label": "Edad",
+      "placeholder": "Ingrese edad",
+      "validators": [
+        {
+          "code": "min",
+          "param": 18,
+          "title": "Minimo de 18 años"
+        },
+        {
+          "code": "max",
+          "param": 35,
+          "title": "Maximo hasta 35 años"
+        }
+      ]
+    }
+  ]

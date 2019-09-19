@@ -13,6 +13,7 @@ import { FilterTableComponent } from './components/filter-table/filter-table.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { GcoInputComponent } from './components/gco-input/gco-input.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     HomeComponent,
     NotFoundComponent,
     ErrorComponent,
-    FilterTableComponent
+    FilterTableComponent,
+    GcoInputComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     HomeComponent,
     NotFoundComponent,
     ErrorComponent,
-    FilterTableComponent
+    FilterTableComponent,
+    GcoInputComponent
   ]
 })
 export class SharedModule { }
