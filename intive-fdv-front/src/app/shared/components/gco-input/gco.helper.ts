@@ -37,7 +37,10 @@ TODO:
 - Validar el json que viene
 - Tener en cuenta el type date y que si se usa un tipo datepicker que sea uno pasado por paramtro
 - Si es tipo date o datepicker, las configuraciones de min y max, o la que poseas esa libreria
-- Ver de armar un modulo con difrentes cosas cutoms-..
+- Ver de armar un modulo con difrentes cosas cutoms, mas que nada para el tipo datepicker
+- Ver ponern en html si es maxLenght (minLenght, min, max) ademas de validators en el input html
+- Ver mejor lo de patterns si le pasa el string por paramteos, 
+- Permitir pasarle la propeidad readonly...
 */
 @Injectable({
   providedIn: 'root'
