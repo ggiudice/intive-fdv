@@ -78,15 +78,5 @@
         "alpha2Code": "KY",
         "name": "Cayman Islands"
       }
-    },
-    {
-      "index": 8,
-      "name": "Deanna",
-      "surname": "Avery",
-      "birthdate": "2002-01-20T03:00:00.000Z",
-      "country": {
-        "alpha2Code": "DZ",
-        "name": "Algeria"
-      }
     }
   ]

@@ -15,15 +15,15 @@ export class CustomValidators {
 
 export class CustomForm {
     name: string; // Validar que name no debe tener espacios ni caracteres especiales
-    isActivate: boolean; // Si lo quiere desactivar y no dibuja nada de nada
+    isActive: boolean; // Si lo quiere desactivar y no dibuja nada de nada
     type: string;
     label: string;
     placeholder: string;
     validators: CustomValidators[];
 
-    constructor(name: string, isActivate: boolean, type: string, label: string, placeholder: string, validators: CustomValidators[]) {
+    constructor(name: string, isActive: boolean, type: string, label: string, placeholder: string, validators: CustomValidators[]) {
         this.name = name;
-        this.isActivate = isActivate;
+        this.isActive = isActive;
         this.type = type;
         this.label = label;
         this.placeholder = placeholder;
@@ -61,7 +61,7 @@ export class GcoHelper {
         mocks.push(new CustomForm('edad', true, 'number', 'Edad', 'Ingrese edad', [ {code: 'min', param: 18 }, { code: 'max', param: 35}]));
         // TODo la idea seria hacer un pipe en la respuesta de recuparar el json y filtrar solo los activos
         debugger
-        return mocks.filter(mock => mock.isActivate === true);
+        return mocks.filter(mock => mock.isActive === true);
     } */
 
     // TODO esto por ahora es harkode y recibe array de typo

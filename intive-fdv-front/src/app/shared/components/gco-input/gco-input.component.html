@@ -43,7 +43,7 @@ addControlAditionals() {
 <!-- 
     getJsonMOCK(): Observable<CustomForm[]> {
         return this.http.get<CustomForm[]>('../../assets/mocks/formcustom.json').pipe(map(formsCustom => {
-          return formsCustom.filter(form => form.isActivate === true);
+          return formsCustom.filter(form => form.isActive === true);
         }));
       }
 -->

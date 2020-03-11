@@ -1,7 +1,7 @@
 [
     {
       "name": "direccion",
-      "isActivate": false,
+      "isActive": false,
       "type": "text",
       "label": "Direccion",
       "placeholder": "Ingrese direccion",
@@ -20,7 +20,7 @@
     },
     {
       "name": "localidad",
-      "isActivate": true,
+      "isActive": true,
       "type": "text",
       "label": "Localidad",
       "placeholder": "Ingrese localidad",
@@ -34,7 +34,7 @@
     },
     {
       "name": "nro",
-      "isActivate": true,
+      "isActive": true,
       "type": "number",
       "label": "Numero",
       "placeholder": "Ingrese número dirección",
@@ -53,7 +53,7 @@
     },
     {
         "name": "nacimiento",
-        "isActivate": true,
+        "isActive": true,
         "type": "date",
         "label": "Fecha de nacimiento",
         "placeholder": "Ingrese fecha de nacimiento",
@@ -65,7 +65,7 @@
     },
     {
       "name": "edad",
-      "isActivate": true,
+      "isActive": true,
       "type": "number",
       "label": "Edad",
       "placeholder": "Ingrese edad",
