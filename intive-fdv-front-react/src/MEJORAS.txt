@@ -7,6 +7,7 @@ Temas generales
     https://github.com/MicheleBertoli/css-in-js
     https://es.survivejs.com/react/advanced-techniques/styling-react/
 - Ver eso de que habla de reconcialiacion de dom actualizado en el video 098 de udemy
+-
 Preguntas
 ---------
 - PureComponent, Componet o hacer classes con arrow function.. Diferencias ???
