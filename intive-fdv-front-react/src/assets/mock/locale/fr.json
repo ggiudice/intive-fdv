@@ -1,0 +1,122 @@
+[
+    {
+        "key": "USERS_FORM_LABEL_NAME",
+        "value": "Nom"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_NAME",
+        "value": "Nom ici"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_NAME",
+        "value": "Nom requis"
+    },
+    {
+        "key": "USERS_FORM_MAXLENGTH_NAME",
+        "value": "Le nom dépasse 50 caractères"
+    },
+    {
+        "key": "USERS_FORM_LABEL_SURNAME",
+        "value": "Nom de famille"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_SURNAME",
+        "value": "Nom de famille ici"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_SURNAME",
+        "value": "Nom de famille requis"
+    },
+    {
+        "key": "USERS_FORM_MAXLENGTH_SURNAME",
+        "value": "Le nom de famille dépasse 50 caractères"
+    },
+    {
+        "key": "USERS_FORM_LABEL_COUNTRY",
+        "value": "Pays"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_COUNTRY",
+        "value": "Pays ici"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_COUNTRY",
+        "value": "Pays requis"
+    },
+    {
+        "key": "USERS_FORM_LABEL_BIRTHDATE",
+        "value": "Date de naissance"
+    },
+    {
+        "key": "USERS_FORM_PLACEHOLDER_BIRTHDATE",
+        "value": "Date de naissance ici"
+    },
+    {
+        "key": "USERS_FORM_REQUIRED_BIRTHDATE",
+        "value": "Date de naissance requise"
+    },
+    {
+        "key": "USERS_FORM_MAXDATE_BIRTHDATE",
+        "value": "Date de naissance invalide"
+    },
+    {
+        "key": "USERS_FORM_BUTTON_CLEAR",
+        "value": "Effacer"
+    },
+    {
+        "key": "USERS_FORM_BUTTON_SAVE",
+        "value": "Sauvegarder"
+    },
+    {
+        "key": "USERS_TABLE_HEADER_NAME",
+        "value": "Nom"
+    },
+    {
+        "key": "USERS_TABLE_HEADER_COUNTRY",
+        "value": "Pays"
+    },
+    {
+        "key": "USERS_TABLE_HEADER_BIRTHDAY",
+        "value": "Date de naissance"
+    },
+    {
+        "key": "USERS_TABLE_CLEAR",
+        "value": "Effacer les données"
+    },
+    {
+        "key": "HEADER_NAV_USERS",
+        "value": "Utilisateur"
+    },
+    {
+        "key": "USERS_INFO_USER",
+        "value": "Bonjour $0 de $1, ton anniversaire est $2"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE",
+        "value": "Langage"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE_ES",
+        "value": "Espagnol"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE_EN",
+        "value": "Anglais"
+    },
+    {
+        "key": "HEADER_NAV_LOCALE_FR",
+        "value": "Français"
+    },
+    {
+        "key": "NOT_FOUND_TITLE",
+        "value": "Page non trouvée!"
+    },
+    {
+        "key": "NOT_FOUND_SUMMARY",
+        "value": "La page à laquelle vous souhaitez accéder n'existe pas"
+    },
+    {
+        "key": "NOT_FOUND_BUTTON_RETURN",
+        "value": "Revenir"
+    }
+]

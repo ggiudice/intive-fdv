@@ -1,0 +1,37 @@
+@import '../../assets/styles.scss';
+
+.active {
+  border-bottom: 5px solid $colour-primary;
+}
+
+//TODO no gusta porque este se sobrescribe con el otro class logo que esta en otro lado..
+.logo {
+  //background: url($image-logo) no-repeat center;
+  background-color: red;
+  background-size: contain;
+  height: auto;
+  min-width: 100px;
+  min-height: 30px;
+  margin-right: 1.2em;
+}
+
+.flag {
+  width: 40px;
+  height: 15px;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 7px;
+
+  &-es {
+    background: url($image-locale-es) no-repeat center;
+    background-size: contain;
+  }
+  &-en {
+    background: url($image-locale-en) no-repeat center;
+    background-size: contain;
+  }
+  &-fr {
+    background: url($image-locale-fr) no-repeat center;
+    background-size: contain;
+  }
+}

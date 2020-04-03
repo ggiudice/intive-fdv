@@ -1,0 +1,26 @@
+
+
+// Colour
+$colour-primary: #007bff;
+$colour-dark-primary: darken($colour-primary, 10%);
+$colour-light-primary: lighten($colour-primary, 10%);
+$colour-danger: #ff0000;
+$colour-white: #ffffff;
+$colour-black: #000000;
+$colour-gray : #676464;
+$colour-light-gray: lighten($colour-gray, 30%);
+
+// Fuentes
+$font-size-ulta-soft: 0.6em;
+$font-size-soft: 0.8em;
+$font-size-medium: 1.0em;
+$font-size-large: 1.2em;
+$font-size-hard: 1.5em;
+
+// Imagenes
+//TODO no logre usarlo
+$image-logo: '/images/intiveFDVlogo.png';
+$imagen-app-error: '/images/app-error.png';
+$image-locale-es: '/images/spain-flag.png';
+$image-locale-en: '/images/united-states-flag.png';
+$image-locale-fr: '/images/france-flag.png';

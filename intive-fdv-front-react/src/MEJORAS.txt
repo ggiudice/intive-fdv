@@ -1,0 +1,21 @@
+Temas generales
+---------------
+- Estilado y liberais o algo para que no se pisen estilados y que sea mas facil de usar
+    ver tambien lo de classnames que redireccion y lo de css-in-js -> Aun no defino que es lo que mas se usa y lo majorcito a usar
+    https://es.reactjs.org/docs/faq-styling.html
+    https://www.npmjs.com/package/classnames#usage-with-reactjs
+    https://github.com/MicheleBertoli/css-in-js
+    https://es.survivejs.com/react/advanced-techniques/styling-react/
+- Ver eso de que habla de reconcialiacion de dom actualizado en el video 098 de udemy
+Preguntas
+---------
+- PureComponent, Componet o hacer classes con arrow function.. Diferencias ???
+
+
+Temas puntuales
+----------------
+
+- 27/03/2020 - Temas de estilado porque por ejemplo esta estilado .logo en navbar y en home, pero se sobreescribe.
+- 27/03/2020 - Temas de intearnalizacion usando redux
+- 27/03/2020 - La uri del logo y de las banderas no las pude usar desde variable sass (ver por ejemplo la carpeta public, igual mirar como viene en network crhome)
+- 27/03/2020 - Actualizar el manifest.json como corresponda
